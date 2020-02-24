@@ -1,0 +1,25 @@
+﻿@model ClubChallenge.Models.Member
+@{
+    ViewBag.Title = "AddMember";
+}
+
+<h2>AddMember</h2>
+
+@using (Html.BeginForm("createMember", "Admin")) //calling createMember actionresult
+{
+
+<div class="formMember">
+    @Html.LabelFor(c => c.FirstName)
+    @Html.TextBoxFor(c => c.FirstName)<br />
+    @Html.LabelFor(c => c.LastName)
+    @Html.TextBoxFor(c => c.LastName)
+</div>
+<button type="submit">Save</button>
+}
+
+
+
+
+
+
+

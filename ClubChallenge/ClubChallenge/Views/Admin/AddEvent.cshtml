@@ -1,0 +1,20 @@
+﻿@model ClubChallenge.Models.Event
+@{
+    ViewBag.Title = "AddEvent";
+}
+
+<h2>AddEvent</h2>
+
+@using (Html.BeginForm("createEvent", "Admin"))
+{
+
+    <div class="formEvent">
+        @Html.LabelFor(c => c.Name)
+        @Html.TextBoxFor(c => c.Name)
+
+    </div>
+
+    <button type="submit">Save</button>
+
+}
+
