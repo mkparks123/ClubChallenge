@@ -54,6 +54,11 @@ namespace ClubChallenge.Controllers
             return View();
         }
 
+        public ActionResult Reports()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult createMember(Member member)
         {
