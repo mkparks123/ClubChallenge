@@ -9,9 +9,14 @@ namespace ClubChallenge.Controllers
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult Home()
+        public ActionResult ClockIn()
+        {
+            return View();
+        }
+        public ActionResult ClockOut()
         {
             return View();
         }
     }
+    
 }

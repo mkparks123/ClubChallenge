@@ -198,7 +198,8 @@
     <Content Include="Views\Admin\Reports.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
     <Content Include="Views\Login\UserLogin.cshtml" />
-    <Content Include="Views\User\Home.cshtml" />
+    <Content Include="Views\User\ClockIn.cshtml" />
+    <Content Include="Views\User\ClockOut.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
