@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ClubChallenge.Models.Event>
+@{
+    Layout = null;
+}
+
+<h2>Events</h2>
+<table>
+    @foreach (var events in Model)
+    {
+       
+
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => events.Name)</td>
+
+                <td>
+
+                </td>
+            </tr>
+        }
+
+    }
+
+</table>
+
+<input type="button" value="Cancel" onclick="location.href='@Url.Action("UserLogin", "Login")'" />
+
+
+

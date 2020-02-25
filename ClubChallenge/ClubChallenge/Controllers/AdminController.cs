@@ -36,31 +36,31 @@ namespace ClubChallenge.Controllers
         }
 
 
-        public ActionResult AddMember()
+        public ActionResult AddMember()//add member page
         {
             return View();
         }
-        public ActionResult AddEvent()
+        public ActionResult AddEvent()//add event page
         {
             return View();
         }
-        public ActionResult MemberEdit()//passsing member id 
+        public ActionResult MemberEdit()//member edit page
         {
             
             return View();
         }
-        public ActionResult EventEdit()
+        public ActionResult EventEdit()//event edit page
         {
             return View();
         }
 
-        public ActionResult Reports()
+        public ActionResult Reports()//reports page
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult createMember(Member member)
+        public ActionResult createMember(Member member)//admin creating a member
         {
             _context.Members.Add(member); //adding member to our dbEntities
             _context.SaveChanges(); //saving our changes
@@ -68,7 +68,7 @@ namespace ClubChallenge.Controllers
         }
 
         [HttpPost]
-        public ActionResult createEvent(Event events)
+        public ActionResult createEvent(Event events)//admin creating an even
         {
             _context.Events.Add(events);
             _context.SaveChanges();
@@ -77,7 +77,7 @@ namespace ClubChallenge.Controllers
         }
 
         [HttpPost]
-        public ActionResult deleteEvent(int id)//passing the Event Id 
+        public ActionResult deleteEvent(int id)//passing id to delete event controller
         {
             var deletedEvent = _context.Events.Where(c => c.Id == id).FirstOrDefault();//storing the event we wish to delete in var
             _context.Events.Remove(deletedEvent);
@@ -86,7 +86,7 @@ namespace ClubChallenge.Controllers
         }
 
         [HttpPost]
-        public ActionResult deleteMember(int id)//passing the Member ID
+        public ActionResult deleteMember(int id)//passing the Member ID to the delete member controller
         {
             var deletedMember = _context.Members.Where(c => c.Id == id).FirstOrDefault();//storing the member we wish to delete in a var
 

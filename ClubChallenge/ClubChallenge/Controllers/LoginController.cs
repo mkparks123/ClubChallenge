@@ -9,12 +9,12 @@ namespace ClubChallenge.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        public ActionResult AdminLogin()
+        public ActionResult AdminLogin()//admin login page
         {
             return View();
         }
 
-        public ActionResult UserLogin()
+        public ActionResult UserLogin()//user login page
         {
             return View();
         }

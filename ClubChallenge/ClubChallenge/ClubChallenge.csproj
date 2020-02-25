@@ -200,6 +200,7 @@
     <Content Include="Views\Login\UserLogin.cshtml" />
     <Content Include="Views\User\ClockIn.cshtml" />
     <Content Include="Views\User\ClockOut.cshtml" />
+    <Content Include="Views\User\ViewEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
