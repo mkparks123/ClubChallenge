@@ -1,0 +1,13 @@
+﻿@{
+    Layout = null;
+}
+
+<h1>Login Below</h1>
+<form>
+    Username: <br />
+    <input type="text" name="username"><br>
+    Password: <br />
+    <input type="password" name="password"><br>
+    <input type="button" value="Login" onclick="location.href='@Url.Action("Index", "Admin")'" />
+    <input type="button" value="Cancel" />
+</form>
