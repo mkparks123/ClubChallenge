@@ -6,6 +6,7 @@
 }
 
 <h2>Current Members</h2>
+
 <table>
     @foreach (var members in Model)
     {
@@ -16,7 +17,7 @@
                 <td>@Html.DisplayFor(m => members.FirstName) @Html.DisplayFor(m => members.LastName)</td>
 
                 <td>
-                    @Html.ActionLink("Edit", "MemberEdit", "Admin", new { id = members.Id }, null)
+                    @Html.ActionLink("Details", "MemberDetails", "Admin", new { id = members.Id }, null)
 
 
 
@@ -30,7 +31,5 @@
 </table>
 
 
-<input type="button"
-       value="Add Member"
-       onclick="location.href='@Url.Action("AddMember", "Admin")'" />
+<input type="button"value="Add Member" onclick="location.href='@Url.Action("AddMember", "Admin")'" />
 

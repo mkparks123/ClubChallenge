@@ -44,10 +44,21 @@ namespace ClubChallenge.Controllers
         {
             return View();
         }
+        public ActionResult MemberDetails(int id)//member details page
+        {
+            var member = _context.Members.SingleOrDefault(c => c.Id == id);
+
+            return View(member);
+        }
         public ActionResult MemberEdit()//member edit page
         {
-            
             return View();
+        }
+        public ActionResult EventDetails(int id)//Event Details page
+        {
+            var events = _context.Events.SingleOrDefault(c => c.Id == id);
+
+            return View(events);
         }
         public ActionResult EventEdit()//event edit page
         {

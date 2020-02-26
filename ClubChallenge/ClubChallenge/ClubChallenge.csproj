@@ -149,6 +149,10 @@
     <Compile Include="Migrations\202002140338106_populatemembers1.designer.cs">
       <DependentUpon>202002140338106_populatemembers1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002260242023_birthday.cs" />
+    <Compile Include="Migrations\202002260242023_birthday.designer.cs">
+      <DependentUpon>202002260242023_birthday.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DBEntities.cs" />
     <Compile Include="Models\Event.cs" />
@@ -201,6 +205,8 @@
     <Content Include="Views\User\ClockIn.cshtml" />
     <Content Include="Views\User\ClockOut.cshtml" />
     <Content Include="Views\User\ViewEvents.cshtml" />
+    <Content Include="Views\Admin\MemberDetails.cshtml" />
+    <Content Include="Views\Admin\EventDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002140338106_populatemembers1.resx">
       <DependentUpon>202002140338106_populatemembers1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002260242023_birthday.resx">
+      <DependentUpon>202002260242023_birthday.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

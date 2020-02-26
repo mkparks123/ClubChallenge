@@ -12,7 +12,10 @@
     @Html.LabelFor(c => c.FirstName)
     @Html.TextBoxFor(c => c.FirstName)<br />
     @Html.LabelFor(c => c.LastName)
-    @Html.TextBoxFor(c => c.LastName)
+    @Html.TextBoxFor(c => c.LastName)<br />
+    @Html.LabelFor(c => c.Birthdate)
+    @Html.TextBoxFor(c => c.Birthdate, "{0:MM/dd/yyyy}") (Month/Day/Year)
+   
 </div>
 <button type="submit">Save</button>
 }

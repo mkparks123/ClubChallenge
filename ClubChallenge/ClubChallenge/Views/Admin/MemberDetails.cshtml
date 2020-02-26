@@ -1,0 +1,11 @@
+﻿
+@model ClubChallenge.Models.Member
+@{
+    ViewBag.Title = "Member Details";
+}
+
+<h2>@Model.FirstName</h2>
+<h2>@Model.LastName</h2>
+<h2>@Model.Birthdate</h2>
+<input type="button" value="Edit Member"onclick="location.href='@Url.Action("MemberEdit", "Admin")'" />
+<input type="button" value="Go Back" onclick="location.href='@Url.Action("Members", "Admin")'"
