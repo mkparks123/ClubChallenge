@@ -97,7 +97,7 @@ namespace ClubChallenge.Controllers
         }
 
         [HttpPost]
-        public ActionResult deleteMember(int id)//passing the Member ID to the delete member controller
+        public ActionResult deleteMember(int id)//passing the Member ID 
         {
             var deletedMember = _context.Members.Where(c => c.Id == id).FirstOrDefault();//storing the member we wish to delete in a var
 
