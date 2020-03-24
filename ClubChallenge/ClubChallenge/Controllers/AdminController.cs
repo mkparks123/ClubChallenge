@@ -50,19 +50,25 @@ namespace ClubChallenge.Controllers
 
             return View(member);
         }
-        public ActionResult MemberEdit()//member edit page
+
+        public ActionResult MemberEdit(int id)//member edit page
         {
-            return View();
+            var member = _context.Members.SingleOrDefault(c => c.Id == id);
+            return View(member);
         }
+
         public ActionResult EventDetails(int id)//Event Details page
         {
             var events = _context.Events.SingleOrDefault(c => c.Id == id);
 
             return View(events);
         }
-        public ActionResult EventEdit()//event edit page
+
+        public ActionResult EventEdit(int id)//event edit page, passing id
         {
-            return View();
+            var events = _context.Events.SingleOrDefault(c => c.Id == id);
+
+            return View(events);
         }
 
         public ActionResult Reports()//reports page
@@ -105,5 +111,7 @@ namespace ClubChallenge.Controllers
             _context.SaveChanges();
             return RedirectToAction("Members", "Admin");
         }
+
+
     }
 }

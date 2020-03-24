@@ -6,9 +6,15 @@
 
 <h1>Event Details</h1>
 
-<h2>@Model.Name</h2>
-<h2>@Model.EventDate</h2>
+@using (Html.BeginForm("EventEdit", "Admin", new { id = Model.Id }))//passing member id to view
+{
 
-<input type="button" value="Edit Member" onclick="location.href='@Url.Action("EventEdit", "Admin")'" />
+    <h2>First Name: @Model.Name</h2>
+    <h2>Last Name: @Model.EventDate</h2>
+    
 
-<input type="button" value="Go Back" onclick="location.href='@Url.Action("Events", "Admin")'"
+    <input type="submit" value="Edit" />
+}
+
+
+<input type="button" value="Go Back" onclick="location.href='@Url.Action("Events", "Admin")'"/>
