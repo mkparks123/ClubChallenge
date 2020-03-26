@@ -4,24 +4,21 @@
 }
 
 <h2>Events</h2>
-<table>
+
     @foreach (var events in Model)
     {
-       
-
+        using (Html.BeginForm("SignUpEvent", "User", new { id = events.Id }))//passing member id to view
         {
-            <tr>
-                <td>@Html.DisplayFor(m => events.Name)</td>
 
-                <td>
+            <h2>@events.Name</h2>
+            
 
-                </td>
-            </tr>
+
+            <input type="submit" value="SignUp" />
         }
 
     }
 
-</table>
 
 <input type="button" value="Cancel" onclick="location.href='@Url.Action("UserLogin", "Login")'" />
 

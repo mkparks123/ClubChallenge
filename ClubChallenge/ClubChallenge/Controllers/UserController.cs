@@ -29,6 +29,18 @@ namespace ClubChallenge.Controllers
             var events = _context.Events;
             return View(events);
         }
+
+        public ActionResult SignUpEvent(int id)
+        {
+
+            var events = _context.Events.SingleOrDefault(c => c.Id == id);
+            return View(events);
+        }
+
+        public ActionResult SignUp() //sign up for event controller, called when button is clicked, will not return a view, have to add code still.
+        {
+            return View();
+        }
     }
     
 }

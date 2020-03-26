@@ -157,10 +157,15 @@
     <Compile Include="Migrations\202003092126317_eventdate.designer.cs">
       <DependentUpon>202003092126317_eventdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003260110500_EventMemberData.cs" />
+    <Compile Include="Migrations\202003260110500_EventMemberData.designer.cs">
+      <DependentUpon>202003260110500_EventMemberData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DBEntities.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\MemberEventData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +216,7 @@
     <Content Include="Views\User\ViewEvents.cshtml" />
     <Content Include="Views\Admin\MemberDetails.cshtml" />
     <Content Include="Views\Admin\EventDetails.cshtml" />
+    <Content Include="Views\User\SignUpEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003092126317_eventdate.resx">
       <DependentUpon>202003092126317_eventdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003260110500_EventMemberData.resx">
+      <DependentUpon>202003260110500_EventMemberData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
