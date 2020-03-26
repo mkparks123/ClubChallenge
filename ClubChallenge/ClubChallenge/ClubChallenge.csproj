@@ -161,6 +161,14 @@
     <Compile Include="Migrations\202003260110500_EventMemberData.designer.cs">
       <DependentUpon>202003260110500_EventMemberData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003262233353_membereventdata.cs" />
+    <Compile Include="Migrations\202003262233353_membereventdata.designer.cs">
+      <DependentUpon>202003262233353_membereventdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003262251514_changename.cs" />
+    <Compile Include="Migrations\202003262251514_changename.designer.cs">
+      <DependentUpon>202003262251514_changename.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DBEntities.cs" />
     <Compile Include="Models\Event.cs" />
@@ -256,6 +264,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003260110500_EventMemberData.resx">
       <DependentUpon>202003260110500_EventMemberData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003262233353_membereventdata.resx">
+      <DependentUpon>202003262233353_membereventdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003262251514_changename.resx">
+      <DependentUpon>202003262251514_changename.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

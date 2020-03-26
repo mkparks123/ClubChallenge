@@ -1,18 +1,19 @@
 ﻿
-@model ClubChallenge.Models.Event 
+@model ClubChallenge.Models.MemberEventData
 @{
     Layout = null;
 }
 
 
-<h2>Sign-Up for @Model.Name</h2>
+<h2>Sign-Up</h2>
 
 @using (Html.BeginForm("SignUp", "User")) //calling createMember actionresult
 {
+    @Html.LabelFor(c => c.FirstName)
+    @Html.TextBoxFor(c => c.FirstName)<br />
+    @Html.LabelFor(c => c.LastName)
+    @Html.TextBoxFor(c => c.LastName)
 
-    <div class="">
-
-    </div>
     <button type="submit">Save</button>
 }
 

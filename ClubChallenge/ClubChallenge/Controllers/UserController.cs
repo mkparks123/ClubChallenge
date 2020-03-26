@@ -37,9 +37,13 @@ namespace ClubChallenge.Controllers
             return View(events);
         }
 
-        public ActionResult SignUp() //sign up for event controller, called when button is clicked, will not return a view, have to add code still.
+        [HttpPost]
+        public ActionResult SignUp(MemberEventData memberEventData) 
         {
-            return View();
+            _context.Membereventdata.Add(memberEventData); 
+            _context.SaveChanges(); //saving our changes
+            return RedirectToAction("ViewEvents", "User");
+         
         }
     }
     

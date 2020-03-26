@@ -9,8 +9,10 @@ namespace ClubChallenge.Models
     {
         
         //need to add a primary key, once fixed, we need to add-migration etc
-        public string FristName { get; set; }
-        public string LastName { get; set; }
+        public int id { get; set; }
+        public Member Member { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; } 
         public int EventID { get; set; }
 
     }
