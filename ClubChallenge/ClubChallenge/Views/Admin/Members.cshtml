@@ -10,7 +10,7 @@
 <table>
     @foreach (var members in Model)
     {
-        using (Html.BeginForm("deleteMember", "Admin", new { id = members.Id }))
+        using (Html.BeginForm("deleteMember", "Admin", new { id = members.Id }))//passing member id to view
 
         {
             <tr>
@@ -26,7 +26,7 @@
             </tr>
         }
 
-        }
+    }
 
 </table>
 

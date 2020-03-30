@@ -8,11 +8,12 @@
 @using (Html.BeginForm("createEvent", "Admin"))
 {
 
-    <div class="formEvent">
-        @Html.LabelFor(c => c.Name)
-        @Html.TextBoxFor(c => c.Name)
+<div class="formEvent">
+    @Html.LabelFor(c => c.Name)
+    @Html.TextBoxFor(c => c.Name)<br />
+    @Html.TextBoxFor(c => c.EventDate, "{0:MM/dd/yyyy}") (Month/Day/Year)
 
-    </div>
+</div>
 
     <button type="submit">Save</button>
 

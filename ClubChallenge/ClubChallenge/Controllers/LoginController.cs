@@ -8,7 +8,7 @@ namespace ClubChallenge.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: Login
+        
         public ActionResult AdminLogin()//admin login page
         {
             return View();
