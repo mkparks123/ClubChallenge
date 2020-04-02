@@ -10,10 +10,10 @@ namespace ClubChallenge.Models
         
         //need to add a primary key, once fixed, we need to add-migration etc
         public int id { get; set; }
-        public Member Member { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; } 
-        public int EventID { get; set; }
+        public string LastName { get; set; }
+        public virtual ICollection<Event> Events { get; set; }
+        public virtual ICollection<Member> Members { get; set; }
 
     }
 }

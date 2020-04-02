@@ -32,8 +32,8 @@ namespace ClubChallenge.Controllers
 
         public ActionResult SignUpEvent(int id)
         {
-
-            var events = _context.Events.SingleOrDefault(c => c.Id == id);
+            
+            var events = _context.Membereventdata.SingleOrDefault(c => c.id == id);
             return View(events);
         }
 
