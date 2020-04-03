@@ -7,6 +7,7 @@ using ClubChallenge.Models;
 
 namespace ClubChallenge.Controllers
 {
+
     public class AdminController : Controller
     {
 
