@@ -189,6 +189,14 @@
     <Compile Include="Migrations\202004041544239_memberclubhours.designer.cs">
       <DependentUpon>202004041544239_memberclubhours.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004042005379_eventmodelchanges.cs" />
+    <Compile Include="Migrations\202004042005379_eventmodelchanges.designer.cs">
+      <DependentUpon>202004042005379_eventmodelchanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004042008317_DBsetclubhours.cs" />
+    <Compile Include="Migrations\202004042008317_DBsetclubhours.designer.cs">
+      <DependentUpon>202004042008317_DBsetclubhours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DBEntities.cs" />
     <Compile Include="Models\Event.cs" />
@@ -198,6 +206,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ClubChallenge.Models.DBEntities.mdf" />
+    <Content Include="App_Data\ClubChallenge.Models.DBEntities_log.ldf">
+      <DependentUpon>ClubChallenge.Models.DBEntities.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -248,7 +260,6 @@
     <Content Include="Views\User\SignUpEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
@@ -306,6 +317,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004041544239_memberclubhours.resx">
       <DependentUpon>202004041544239_memberclubhours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004042005379_eventmodelchanges.resx">
+      <DependentUpon>202004042005379_eventmodelchanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004042008317_DBsetclubhours.resx">
+      <DependentUpon>202004042008317_DBsetclubhours.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
