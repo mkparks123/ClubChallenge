@@ -12,8 +12,7 @@ namespace ClubChallenge.Models
         public int id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public virtual ICollection<Event> Events { get; set; }
-        public virtual ICollection<Member> Members { get; set; }
+
 
     }
 }

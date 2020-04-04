@@ -173,18 +173,31 @@
     <Compile Include="Migrations\202004021853059_ICOLLECTION.designer.cs">
       <DependentUpon>202004021853059_ICOLLECTION.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004041509309_removeICOLLECTION.cs" />
+    <Compile Include="Migrations\202004041509309_removeICOLLECTION.designer.cs">
+      <DependentUpon>202004041509309_removeICOLLECTION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004041531138_foreignkeys.cs" />
+    <Compile Include="Migrations\202004041531138_foreignkeys.designer.cs">
+      <DependentUpon>202004041531138_foreignkeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004041537385_userPIN.cs" />
+    <Compile Include="Migrations\202004041537385_userPIN.designer.cs">
+      <DependentUpon>202004041537385_userPIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004041544239_memberclubhours.cs" />
+    <Compile Include="Migrations\202004041544239_memberclubhours.designer.cs">
+      <DependentUpon>202004041544239_memberclubhours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DBEntities.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\MemberClubHours.cs" />
     <Compile Include="Models\MemberEventData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ClubChallenge.Models.DBEntities.mdf" />
-    <Content Include="App_Data\ClubChallenge.Models.DBEntities_log.ldf">
-      <DependentUpon>ClubChallenge.Models.DBEntities.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -235,6 +248,7 @@
     <Content Include="Views\User\SignUpEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
@@ -280,6 +294,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004021853059_ICOLLECTION.resx">
       <DependentUpon>202004021853059_ICOLLECTION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004041509309_removeICOLLECTION.resx">
+      <DependentUpon>202004041509309_removeICOLLECTION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004041531138_foreignkeys.resx">
+      <DependentUpon>202004041531138_foreignkeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004041537385_userPIN.resx">
+      <DependentUpon>202004041537385_userPIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004041544239_memberclubhours.resx">
+      <DependentUpon>202004041544239_memberclubhours.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
