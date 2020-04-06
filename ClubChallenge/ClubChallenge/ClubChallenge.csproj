@@ -197,6 +197,10 @@
     <Compile Include="Migrations\202004042008317_DBsetclubhours.designer.cs">
       <DependentUpon>202004042008317_DBsetclubhours.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004061743170_timespan.cs" />
+    <Compile Include="Migrations\202004061743170_timespan.designer.cs">
+      <DependentUpon>202004061743170_timespan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DBEntities.cs" />
     <Compile Include="Models\Event.cs" />
@@ -261,6 +265,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\Logout\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -323,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004042008317_DBsetclubhours.resx">
       <DependentUpon>202004042008317_DBsetclubhours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004061743170_timespan.resx">
+      <DependentUpon>202004061743170_timespan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

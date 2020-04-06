@@ -11,11 +11,18 @@
 <div class="formEvent">
     @Html.LabelFor(c => c.Name)
     @Html.TextBoxFor(c => c.Name)<br />
-    @Html.TextBoxFor(c => c.EventDate, "{0:MM/dd/yyyy}") (Month/Day/Year)
+    @Html.LabelFor(c => c.EventDate)
+    @Html.TextBoxFor(c => c.EventDate, "{0:MM/dd/yyyy}") (Month/Day/Year)<br />
+    @Html.LabelFor(c => c.EventStartTime)
+    @Html.TextBoxFor(c => c.EventStartTime, "{0:hh\\:mm}") <br />
+    @Html.LabelFor(c => c.EventEndTime)
+    @Html.TextBoxFor(c => c.EventEndTime, "{0:hh\\:mm}") <br />
+    
 
 </div>
 
     <button type="submit">Save</button>
 
 }
+    <input type="button" value="Go Back" onclick="location.href='@Url.Action("Events", "Admin")'" />
 

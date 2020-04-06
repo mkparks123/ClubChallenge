@@ -9,8 +9,10 @@
 @using (Html.BeginForm("EventEdit", "Admin", new { id = Model.Id }))//passing member id to view
 {
 
-    <h2>Name of Event: @Model.Name</h2>
-    <h2>Date of Event: @Model.EventDate</h2>
+    <h3>Name of Event: @Model.Name</h3>
+    <h3>Date of Event: @Model.EventDate</h3>
+    <h3>Time Event Starts: @Model.EventStartTime</h3>
+    <h3>Time event Ends: @Model.EventEndTime</h3>
     
 
     <input type="submit" value="Edit" />

@@ -112,6 +112,10 @@ namespace ClubChallenge.Controllers
             _context.SaveChanges();
             return RedirectToAction("Members", "Admin");
         }
+        public ActionResult Logout()
+        {
+            return RedirectToAction("UserLogin", "Login");
+        }
 
 
     }

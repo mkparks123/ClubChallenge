@@ -14,11 +14,14 @@
     @Html.LabelFor(c => c.LastName)
     @Html.TextBoxFor(c => c.LastName)<br />
     @Html.LabelFor(c => c.Birthdate)
-    @Html.TextBoxFor(c => c.Birthdate, "{0:MM/dd/yyyy}") (Month/Day/Year)
+    @Html.TextBoxFor(c => c.Birthdate, "{0:MM/dd/yyyy}") (Month/Day/Year)<br />
+    @Html.LabelFor(c =>c.PIN)
+    @Html.TextBoxFor(c => c.PIN) (4 digits)
    
 </div>
 <button type="submit">Save</button>
 }
+<input type="button" value="Go Back" onclick="location.href='@Url.Action("Members", "Admin")'" />
 
 
 
