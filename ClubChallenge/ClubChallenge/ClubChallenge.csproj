@@ -226,6 +226,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ClubChallenge.Models.DBEntities.mdf" />
+    <Content Include="App_Data\ClubChallenge.Models.DBEntities_log.ldf">
+      <DependentUpon>ClubChallenge.Models.DBEntities.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -276,7 +280,6 @@
     <Content Include="Views\User\SignUpEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Logout\" />
   </ItemGroup>
