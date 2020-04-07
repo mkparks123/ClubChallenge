@@ -12,6 +12,6 @@ namespace ClubChallenge.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime? Birthdate { get; set; }
-        public virtual ICollection<MemberEventData> MemberEventDatas { get; set; }
+        public virtual ICollection<Event> Events { get; set; }
     }
 }

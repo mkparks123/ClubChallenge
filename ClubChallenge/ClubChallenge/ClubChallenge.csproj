@@ -201,6 +201,22 @@
     <Compile Include="Migrations\202004061743170_timespan.designer.cs">
       <DependentUpon>202004061743170_timespan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004071604512_Eventmemberobjects.cs" />
+    <Compile Include="Migrations\202004071604512_Eventmemberobjects.designer.cs">
+      <DependentUpon>202004071604512_Eventmemberobjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004071614180_removemembereventdata.cs" />
+    <Compile Include="Migrations\202004071614180_removemembereventdata.designer.cs">
+      <DependentUpon>202004071614180_removemembereventdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004071629233_membermodel.cs" />
+    <Compile Include="Migrations\202004071629233_membermodel.designer.cs">
+      <DependentUpon>202004071629233_membermodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004071639388_event.cs" />
+    <Compile Include="Migrations\202004071639388_event.designer.cs">
+      <DependentUpon>202004071639388_event.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DBEntities.cs" />
     <Compile Include="Models\Event.cs" />
@@ -210,10 +226,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ClubChallenge.Models.DBEntities.mdf" />
-    <Content Include="App_Data\ClubChallenge.Models.DBEntities_log.ldf">
-      <DependentUpon>ClubChallenge.Models.DBEntities.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -264,6 +276,7 @@
     <Content Include="Views\User\SignUpEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Logout\" />
   </ItemGroup>
@@ -331,6 +344,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004061743170_timespan.resx">
       <DependentUpon>202004061743170_timespan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004071604512_Eventmemberobjects.resx">
+      <DependentUpon>202004071604512_Eventmemberobjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004071614180_removemembereventdata.resx">
+      <DependentUpon>202004071614180_removemembereventdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004071629233_membermodel.resx">
+      <DependentUpon>202004071629233_membermodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004071639388_event.resx">
+      <DependentUpon>202004071639388_event.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

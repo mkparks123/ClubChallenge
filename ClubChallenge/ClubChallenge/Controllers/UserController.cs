@@ -40,6 +40,7 @@ namespace ClubChallenge.Controllers
         [HttpPost]
         public ActionResult SignUp(MemberEventData memberEventData) 
         {
+            
             _context.Membereventdata.Add(memberEventData); 
             _context.SaveChanges(); //saving our changes
             return RedirectToAction("ViewEvents", "User");

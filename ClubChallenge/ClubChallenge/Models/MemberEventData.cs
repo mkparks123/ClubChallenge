@@ -10,8 +10,9 @@ namespace ClubChallenge.Models
         
         //need to add a primary key, once fixed, we need to add-migration etc
         public int id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        
+
+
 
 
     }
