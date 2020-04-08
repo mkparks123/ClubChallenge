@@ -225,17 +225,21 @@
     <Compile Include="Migrations\202004081606386_eventcategory.designer.cs">
       <DependentUpon>202004081606386_eventcategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004081620076_memberprimarykeychange.cs" />
-    <Compile Include="Migrations\202004081620076_memberprimarykeychange.designer.cs">
-      <DependentUpon>202004081620076_memberprimarykeychange.cs</DependentUpon>
+    <Compile Include="Migrations\202004081907432_viewmodel.cs" />
+    <Compile Include="Migrations\202004081907432_viewmodel.designer.cs">
+      <DependentUpon>202004081907432_viewmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004081910266_viewmodelmember.cs" />
+    <Compile Include="Migrations\202004081910266_viewmodelmember.designer.cs">
+      <DependentUpon>202004081910266_viewmodelmember.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DBEntities.cs" />
     <Compile Include="Models\Event.cs" />
-    <Compile Include="Models\EventCategory.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\MemberClubHours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MemberViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -289,7 +293,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Views\Logout\" />
   </ItemGroup>
   <ItemGroup>
@@ -375,8 +378,11 @@
     <EmbeddedResource Include="Migrations\202004081606386_eventcategory.resx">
       <DependentUpon>202004081606386_eventcategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004081620076_memberprimarykeychange.resx">
-      <DependentUpon>202004081620076_memberprimarykeychange.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004081907432_viewmodel.resx">
+      <DependentUpon>202004081907432_viewmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004081910266_viewmodelmember.resx">
+      <DependentUpon>202004081910266_viewmodelmember.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

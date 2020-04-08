@@ -7,13 +7,13 @@ namespace ClubChallenge.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class memberprimarykeychange : IMigrationMetadata
+    public sealed partial class viewmodelmember : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(memberprimarykeychange));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(viewmodelmember));
         
         string IMigrationMetadata.Id
         {
-            get { return "202004081620076_memberprimarykeychange"; }
+            get { return "202004081910266_viewmodelmember"; }
         }
         
         string IMigrationMetadata.Source

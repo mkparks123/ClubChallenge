@@ -37,15 +37,15 @@ namespace ClubChallenge.Controllers
             return View(events);
         }
 
-        //[HttpPost]
-       // public ActionResult SignUp(MemberEventData memberEventData) 
-        //{
+        [HttpPost]
+        public ActionResult SignUp(Member events) 
+        {
             
-           // _context.Membereventdata.Add(memberEventData); 
-           // _context.SaveChanges(); //saving our changes
-           // return RedirectToAction("ViewEvents", "User");
+            _context.Members.Add(events); 
+            _context.SaveChanges(); //saving our changes
+            return RedirectToAction("ViewEvents", "User");
          
-       // }
+        }
     }
     
 }

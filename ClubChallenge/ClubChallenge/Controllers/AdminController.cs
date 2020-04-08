@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ClubChallenge.Models;
+using ClubChallenge.ViewModels;
 
 namespace ClubChallenge.Controllers
 {
@@ -55,6 +56,11 @@ namespace ClubChallenge.Controllers
         public ActionResult MemberEdit(int id)//member edit page
         {
             var member = _context.Members.SingleOrDefault(c => c.Id == id);
+            if (member == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(member);
         }
 
@@ -78,18 +84,44 @@ namespace ClubChallenge.Controllers
         }
 
         [HttpPost]
-        public ActionResult createMember(Member member)//admin creating a member
+        public ActionResult SaveMember(Member member)//model binding
         {
-            _context.Members.Add(member); //adding member to our dbEntities
+            if (member.Id == 0)//if its a new customer
+            {
+                _context.Members.Add(member); //adding member to our dbEntities
+            }
+            else
+            {
+                var memberinDB = _context.Members.Single(c => c.Id == member.Id);
+                memberinDB.FirstName = member.FirstName;
+                memberinDB.LastName = member.LastName;
+                memberinDB.Birthdate = member.Birthdate;
+                memberinDB.PIN = member.PIN;
+          
+            }
+            
             _context.SaveChanges(); //saving our changes
             return RedirectToAction("Members" ,"Admin");
         }
 
         [HttpPost]
-        public ActionResult createEvent(Event events)//admin creating an even
+        public ActionResult SaveEvent(Event events)//model binding
         {
+            if(events.Id == 0) //if its a new event
+            {
+                _context.Events.Add(events);
+            }
+            else
+            {
+                var eventinDB = _context.Events.Single(c => c.Id == events.Id);
+                eventinDB.Name = events.Name;
+                eventinDB.EventDate = events.EventDate;
+                eventinDB.EventStartTime = events.EventStartTime;
+                eventinDB.EventEndTime = events.EventEndTime;
+
+
+            }
             
-            _context.Events.Add(events);
             _context.SaveChanges();
             return RedirectToAction("Events", "Admin");
 
