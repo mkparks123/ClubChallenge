@@ -88,6 +88,7 @@ namespace ClubChallenge.Controllers
         [HttpPost]
         public ActionResult createEvent(Event events)//admin creating an even
         {
+            
             _context.Events.Add(events);
             _context.SaveChanges();
             return RedirectToAction("Events", "Admin");

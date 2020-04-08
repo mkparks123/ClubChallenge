@@ -30,22 +30,22 @@ namespace ClubChallenge.Controllers
             return View(events);
         }
 
-        public ActionResult SignUpEvent(int id)
+        public ActionResult SignUpEvent(int id)//need to work on this!!
         {
             
-            var events = _context.Membereventdata.SingleOrDefault(c => c.id == id);
+            var events = _context.Members.SingleOrDefault(c => c.Id == id);
             return View(events);
         }
 
-        [HttpPost]
-        public ActionResult SignUp(MemberEventData memberEventData) 
-        {
+        //[HttpPost]
+       // public ActionResult SignUp(MemberEventData memberEventData) 
+        //{
             
-            _context.Membereventdata.Add(memberEventData); 
-            _context.SaveChanges(); //saving our changes
-            return RedirectToAction("ViewEvents", "User");
+           // _context.Membereventdata.Add(memberEventData); 
+           // _context.SaveChanges(); //saving our changes
+           // return RedirectToAction("ViewEvents", "User");
          
-        }
+       // }
     }
     
 }

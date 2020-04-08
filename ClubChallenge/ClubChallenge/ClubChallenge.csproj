@@ -217,12 +217,24 @@
     <Compile Include="Migrations\202004071639388_event.designer.cs">
       <DependentUpon>202004071639388_event.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004071930485_removememberdatatable.cs" />
+    <Compile Include="Migrations\202004071930485_removememberdatatable.designer.cs">
+      <DependentUpon>202004071930485_removememberdatatable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004081606386_eventcategory.cs" />
+    <Compile Include="Migrations\202004081606386_eventcategory.designer.cs">
+      <DependentUpon>202004081606386_eventcategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004081620076_memberprimarykeychange.cs" />
+    <Compile Include="Migrations\202004081620076_memberprimarykeychange.designer.cs">
+      <DependentUpon>202004081620076_memberprimarykeychange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DBEntities.cs" />
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\EventCategory.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\MemberClubHours.cs" />
-    <Compile Include="Models\MemberEventData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -356,6 +368,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004071639388_event.resx">
       <DependentUpon>202004071639388_event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004071930485_removememberdatatable.resx">
+      <DependentUpon>202004071930485_removememberdatatable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004081606386_eventcategory.resx">
+      <DependentUpon>202004081606386_eventcategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004081620076_memberprimarykeychange.resx">
+      <DependentUpon>202004081620076_memberprimarykeychange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
