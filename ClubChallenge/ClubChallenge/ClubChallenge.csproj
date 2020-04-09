@@ -233,6 +233,14 @@
     <Compile Include="Migrations\202004081910266_viewmodelmember.designer.cs">
       <DependentUpon>202004081910266_viewmodelmember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004091639029_addingvalidation.cs" />
+    <Compile Include="Migrations\202004091639029_addingvalidation.designer.cs">
+      <DependentUpon>202004091639029_addingvalidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004091647210_eventvalidation.cs" />
+    <Compile Include="Migrations\202004091647210_eventvalidation.designer.cs">
+      <DependentUpon>202004091647210_eventvalidation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DBEntities.cs" />
     <Compile Include="Models\Event.cs" />
@@ -383,6 +391,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004081910266_viewmodelmember.resx">
       <DependentUpon>202004081910266_viewmodelmember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004091639029_addingvalidation.resx">
+      <DependentUpon>202004091639029_addingvalidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004091647210_eventvalidation.resx">
+      <DependentUpon>202004091647210_eventvalidation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

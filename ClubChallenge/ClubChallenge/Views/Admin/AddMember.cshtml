@@ -11,13 +11,19 @@
 <div class="formMember">
     @Html.LabelFor(c => c.FirstName)
     @Html.TextBoxFor(c => c.FirstName)<br />
+    @Html.ValidationMessageFor(m => m.FirstName)<br />
+
     @Html.LabelFor(c => c.LastName)
     @Html.TextBoxFor(c => c.LastName)<br />
+    @Html.ValidationMessageFor(m => m.LastName)<br />
+
     @Html.LabelFor(c => c.Birthdate)
     @Html.TextBoxFor(c => c.Birthdate, "{0:MM/dd/yyyy}") (Month/Day/Year)<br />
-    @Html.LabelFor(c =>c.PIN)
-    @Html.TextBoxFor(c => c.PIN) (4 digits)
-   
+    <br />
+    @Html.LabelFor(c => c.PIN)
+    @Html.TextBoxFor(c => c.PIN) (4 digits)<br />
+    @Html.ValidationMessageFor(m => m.PIN)<br />
+
 </div>
 <button type="submit">Save</button>
 }

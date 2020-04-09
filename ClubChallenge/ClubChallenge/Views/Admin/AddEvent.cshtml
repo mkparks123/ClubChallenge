@@ -11,12 +11,19 @@
 <div class="formEvent">
     @Html.LabelFor(c => c.Name)
     @Html.TextBoxFor(c => c.Name)<br />
+    @Html.ValidationMessageFor(m => m.Name)<br />
+
     @Html.LabelFor(c => c.EventDate)
     @Html.TextBoxFor(c => c.EventDate, "{0:MM/dd/yyyy}") (Month/Day/Year)<br />
+    @Html.ValidationMessageFor(m => m.EventDate)<br />
+
     @Html.LabelFor(c => c.EventStartTime)
     @Html.TextBoxFor(c => c.EventStartTime, "{0:hh\\:mm}") <br />
+    @Html.ValidationMessageFor(m => m.EventStartTime)<br />>
+
     @Html.LabelFor(c => c.EventEndTime)
     @Html.TextBoxFor(c => c.EventEndTime, "{0:hh\\:mm}") <br />
+    @Html.ValidationMessageFor(m => m.EventEndTime)<br />>
 
 
 </div>

@@ -86,6 +86,10 @@ namespace ClubChallenge.Controllers
         [HttpPost]
         public ActionResult SaveMember(Member member)//model binding
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddMember");
+            }
             if (member.Id == 0)//if its a new customer
             {
                 _context.Members.Add(member); //adding member to our dbEntities
@@ -107,7 +111,11 @@ namespace ClubChallenge.Controllers
         [HttpPost]
         public ActionResult SaveEvent(Event events)//model binding
         {
-            if(events.Id == 0) //if its a new event
+            if (!ModelState.IsValid)
+            {
+                return View("AddEvent");
+            }
+            if (events.Id == 0) //if its a new event
             {
                 _context.Events.Add(events);
             }
