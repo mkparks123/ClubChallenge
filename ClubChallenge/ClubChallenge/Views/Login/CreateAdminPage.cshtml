@@ -1,0 +1,35 @@
+﻿@model ClubChallenge.Models.Admin
+@{
+    Layout = null;
+}
+
+<h2>CreateAdminPage</h2>
+
+
+@using (Html.BeginForm("SaveAdmin", "Login"))
+{
+    @Html.LabelFor(c => c.FirstName)<br />
+    @Html.TextBoxFor(c => c.FirstName)<br />
+    @Html.ValidationMessageFor(c => c.FirstName)<br />
+
+    @Html.LabelFor(c => c.LastName)<br />
+    @Html.TextBoxFor(c => c.LastName)<br />
+    @Html.ValidationMessageFor(c => c.LastName)<br />
+
+    @Html.LabelFor(c => c.Birthday)<br />
+    @Html.TextBoxFor(c => c.Birthday)<br />
+    @Html.ValidationMessageFor(c => c.Birthday) <br />
+
+    @Html.LabelFor(c => c.UserName)<br />
+    @Html.TextBoxFor(c => c.UserName)<br />
+    @Html.ValidationMessageFor(c => c.UserName)<br />
+
+    @Html.LabelFor(c => c.Password)<br />
+    @Html.TextBoxFor(c => c.Password)<br />
+    @Html.ValidationMessageFor(c => c.Password)<br />
+
+    <button type="submit">Save</button>
+   
+
+}
+    <input type="button" value="Go Back" onclick="location.href='@Url.Action("AdminLogin", "Login")'" />

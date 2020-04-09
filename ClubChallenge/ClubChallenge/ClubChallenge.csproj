@@ -241,7 +241,16 @@
     <Compile Include="Migrations\202004091647210_eventvalidation.designer.cs">
       <DependentUpon>202004091647210_eventvalidation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004091731491_admin.cs" />
+    <Compile Include="Migrations\202004091731491_admin.designer.cs">
+      <DependentUpon>202004091731491_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004091801595_admin1.cs" />
+    <Compile Include="Migrations\202004091801595_admin1.designer.cs">
+      <DependentUpon>202004091801595_admin1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DBEntities.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Member.cs" />
@@ -292,12 +301,13 @@
     <Content Include="Views\Admin\Reports.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
     <Content Include="Views\Login\UserLogin.cshtml" />
-    <Content Include="Views\User\ClockIn.cshtml" />
-    <Content Include="Views\User\ClockOut.cshtml" />
     <Content Include="Views\User\ViewEvents.cshtml" />
     <Content Include="Views\Admin\MemberDetails.cshtml" />
     <Content Include="Views\Admin\EventDetails.cshtml" />
     <Content Include="Views\User\SignUpEvent.cshtml" />
+    <Content Include="Views\Login\ClockIn.cshtml" />
+    <Content Include="Views\Login\ClockOut.cshtml" />
+    <Content Include="Views\Login\CreateAdminPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -397,6 +407,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004091647210_eventvalidation.resx">
       <DependentUpon>202004091647210_eventvalidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004091731491_admin.resx">
+      <DependentUpon>202004091731491_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004091801595_admin1.resx">
+      <DependentUpon>202004091801595_admin1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

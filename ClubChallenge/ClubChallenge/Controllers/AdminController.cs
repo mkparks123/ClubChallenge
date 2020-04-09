@@ -86,7 +86,7 @@ namespace ClubChallenge.Controllers
         [HttpPost]
         public ActionResult SaveMember(Member member)//model binding
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) //validating member fields
             {
                 return View("AddMember");
             }
@@ -111,7 +111,7 @@ namespace ClubChallenge.Controllers
         [HttpPost]
         public ActionResult SaveEvent(Event events)//model binding
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) //validating events fields
             {
                 return View("AddEvent");
             }

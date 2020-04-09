@@ -18,6 +18,7 @@ namespace ClubChallenge.Controllers
         }
         public ActionResult ClockIn()//member clocking in
         {
+
             return View();
         }
         public ActionResult ClockOut()//member clocking out
@@ -40,7 +41,10 @@ namespace ClubChallenge.Controllers
         [HttpPost]
         public ActionResult SignUp(Member events) 
         {
-            
+            if (!ModelState.IsValid) //validating events fields
+            {
+                return View("SignUpEvent");
+            }
             _context.Members.Add(events); 
             _context.SaveChanges(); //saving our changes
             return RedirectToAction("ViewEvents", "User");
