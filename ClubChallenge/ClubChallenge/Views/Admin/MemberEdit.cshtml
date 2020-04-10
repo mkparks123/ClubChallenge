@@ -9,15 +9,21 @@
 {
     @Html.LabelFor(c => c.FirstName)
     @Html.TextBoxFor(c => c.FirstName)<br />
+    @Html.ValidationMessageFor(c => c.FirstName)<br />
+
     @Html.LabelFor(c => c.LastName)
     @Html.TextBoxFor(c => c.LastName)<br />
+    @Html.ValidationMessageFor(c => c.LastName)<br />
+
     @Html.LabelFor(c => c.Birthdate)
     @Html.TextBoxFor(c => c.Birthdate, "{0:MM/dd/yyyy}")<br />
+
+
     @Html.LabelFor(c => c.PIN)
     @Html.TextBoxFor(c => c.PIN)<br />
+    @Html.ValidationMessageFor(c => c.PIN)<br />
 
-
-    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(c => c.Id)
     <button type="submit">Save</button>
 }
 

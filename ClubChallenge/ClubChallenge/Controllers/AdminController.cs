@@ -88,7 +88,7 @@ namespace ClubChallenge.Controllers
         {
             if (!ModelState.IsValid) //validating member fields
             {
-                return View("AddMember");
+                return View("MemberEdit");
             }
             if (member.Id == 0)//if its a new customer
             {
@@ -113,7 +113,7 @@ namespace ClubChallenge.Controllers
         {
             if (!ModelState.IsValid) //validating events fields
             {
-                return View("AddEvent");
+                return View("EventEdit");
             }
             if (events.Id == 0) //if its a new event
             {

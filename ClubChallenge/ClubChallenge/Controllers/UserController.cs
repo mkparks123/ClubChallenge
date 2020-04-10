@@ -16,15 +16,7 @@ namespace ClubChallenge.Controllers
         {
             _context = new DBEntities(); //creating an object from our class DBENtities called _context
         }
-        public ActionResult ClockIn()//member clocking in
-        {
 
-            return View();
-        }
-        public ActionResult ClockOut()//member clocking out
-        {
-            return View();
-        }
         public ActionResult ViewEvents()//member viewing events that an admin created
         {
             var events = _context.Events;

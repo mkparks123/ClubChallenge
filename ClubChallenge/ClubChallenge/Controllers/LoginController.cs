@@ -42,7 +42,7 @@ namespace ClubChallenge.Controllers
         }
         public ActionResult ClockIn()//member clocking in
         {
-
+            
             return View();
         }
         public ActionResult ClockOut()//member clocking out

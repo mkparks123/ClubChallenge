@@ -10,7 +10,7 @@ namespace ClubChallenge.Models
     {
         public int Id { get; set; }
         [Required]
-        [StringLength(4)]
+        [MaxLength(4, ErrorMessage = "PIN must be 4 numbers long"), MinLength(4, ErrorMessage = "PIN must be 4 numbers long")]
         public string PIN { get; set; }
         [Required]
         public string FirstName { get; set; }
