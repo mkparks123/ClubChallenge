@@ -253,6 +253,10 @@
     <Compile Include="Migrations\202004100112080_pinerror.designer.cs">
       <DependentUpon>202004100112080_pinerror.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004101643452_memberobject.cs" />
+    <Compile Include="Migrations\202004101643452_memberobject.designer.cs">
+      <DependentUpon>202004101643452_memberobject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DBEntities.cs" />
@@ -420,6 +424,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004100112080_pinerror.resx">
       <DependentUpon>202004100112080_pinerror.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004101643452_memberobject.resx">
+      <DependentUpon>202004101643452_memberobject.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

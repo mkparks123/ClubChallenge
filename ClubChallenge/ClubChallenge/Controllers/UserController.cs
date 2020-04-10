@@ -23,7 +23,7 @@ namespace ClubChallenge.Controllers
             return View(events);
         }
 
-        public ActionResult SignUpEvent(int id)//need to work on this!!
+        public ActionResult SignUpEvent(int id)
         {
             
             var events = _context.Members.SingleOrDefault(c => c.Id == id);
