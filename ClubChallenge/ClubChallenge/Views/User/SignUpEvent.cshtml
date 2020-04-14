@@ -1,5 +1,5 @@
 ﻿
-@model ClubChallenge.Models.Event
+@model ClubChallenge.Models.Member
 @{
     Layout = null;
 }
@@ -9,6 +9,8 @@
 
 @using (Html.BeginForm("SignUp", "User")) //calling createMember actionresult
 {
+    @Html.LabelFor(c => c.PIN)
+    @Html.TextBoxFor(c => c.PIN)
 
     
     

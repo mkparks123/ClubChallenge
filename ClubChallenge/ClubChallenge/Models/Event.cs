@@ -19,8 +19,8 @@ namespace ClubChallenge.Models
         [Required]
         public TimeSpan EventEndTime { get; set; }
         public int EventTotalTime{ get; set; }
-        public virtual ICollection<Member> Members { get; set; }
-        
+        public virtual ICollection<Member> Members { get; } = new HashSet<Member>();
+
 
     }
 }
