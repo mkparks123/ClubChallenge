@@ -5,13 +5,16 @@
 
 <h1>Club Members Login Below!</h1>
 
-@using (Html.BeginForm("ClockIn", "Login", FormMethod.Post)) 
+@using (Html.BeginForm("ClubHours", "Login", FormMethod.Post))
 {
 
     @Html.LabelFor(c => c.PIN)
     @Html.TextBoxFor(c => c.PIN)<br />
+    @Html.ValidationMessageFor(c => c.PIN)
 
-    <button type="submit" value="ClockIn">ClockIn</button>
+    <input type="submit" name="submit" value="ClockIn" />
+    <input type="submit" name="submit" value="ClockOut" />
+
 
 
 }
