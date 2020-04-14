@@ -1,15 +1,21 @@
-﻿
+﻿@model ClubChallenge.Models.Member
 @{
     Layout = null;
 }
 
 <h1>Club Members Login Below!</h1>
-<form>
 
-    Enter your PIN: <br />
-    <input type="password" name="password"><br>
-    <input type="button" value="Clock-In" onclick="location.href='@Url.Action("ClockIn", "Login")'" />
-    <input type="button" value="Clock-Out" onclick="location.href='@Url.Action("ClockOut", "Login")'"/>
-    <input type="button" value="Events" onclick="location.href='@Url.Action("ViewEvents", "User")'"/>
-    <input type="button" value="Admin" onclick="location.href='@Url.Action("AdminLogin","Login")'"/>
-</form>
+@using (Html.BeginForm("ClockIn", "Login", FormMethod.Post)) 
+{
+
+    @Html.LabelFor(c => c.PIN)
+    @Html.TextBoxFor(c => c.PIN)<br />
+
+    <button type="submit" value="ClockIn">ClockIn</button>
+
+
+}
+
+
+<input type="button" value="Events" onclick="location.href='@Url.Action("ViewEvents", "User")'" />
+<input type="button" value="Admin" onclick="location.href='@Url.Action("AdminLogin","Login")'" />

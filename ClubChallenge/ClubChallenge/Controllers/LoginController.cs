@@ -40,13 +40,27 @@ namespace ClubChallenge.Controllers
         {
             return View();
         }
-        public ActionResult ClockIn()//member clocking in
+
+        [HttpPost]
+        public ActionResult ClockIn(string Pin)//member clocking in
         {
             
+            var mem = _context.Members.Where(c => c.PIN == Pin).FirstOrDefault();
+            var hours = new MemberClubHours();
+            hours.ClockIn = DateTime.Now;
+            mem.Hours.Add(hours);
+            _context.SaveChanges();
+
+
             return View();
         }
-        public ActionResult ClockOut()//member clocking out
+        public ActionResult ClockOut(string Pin)//member clocking out
         {
+            var mem = _context.Members.Where(c => c.PIN == Pin).FirstOrDefault();
+            var hours = new MemberClubHours();
+            hours.ClockOut = DateTime.Now;
+            mem.Hours.Add(hours);
+            _context.SaveChanges();
             return View();
         }
     }
