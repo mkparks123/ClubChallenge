@@ -17,7 +17,7 @@ namespace ClubChallenge.Models
         [Required]
         public string LastName { get; set; }
         public DateTime? Birthdate { get; set; }
-        public virtual ICollection<Event> Events { get; } = new HashSet<Event>();
+        public virtual ICollection<Event> Events { get; set; }
         public virtual ICollection<MemberClubHours> Hours { get; } = new HashSet<MemberClubHours>();
     }
 }

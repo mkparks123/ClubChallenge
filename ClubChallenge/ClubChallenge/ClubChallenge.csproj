@@ -276,6 +276,10 @@
     <Compile Include="Migrations\202004141639278_hashset.designer.cs">
       <DependentUpon>202004141639278_hashset.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004142345158_reversehashsets.cs" />
+    <Compile Include="Migrations\202004142345158_reversehashsets.designer.cs">
+      <DependentUpon>202004142345158_reversehashsets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DBEntities.cs" />
@@ -452,6 +456,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004141639278_hashset.resx">
       <DependentUpon>202004141639278_hashset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004142345158_reversehashsets.resx">
+      <DependentUpon>202004142345158_reversehashsets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
