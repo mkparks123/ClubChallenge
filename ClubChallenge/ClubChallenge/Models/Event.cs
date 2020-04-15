@@ -20,7 +20,7 @@ namespace ClubChallenge.Models
         public TimeSpan EventEndTime { get; set; }
         public int EventTotalTime{ get; set; }
         public virtual ICollection<Member> Members { get; set; }
-        
+
 
     }
 }

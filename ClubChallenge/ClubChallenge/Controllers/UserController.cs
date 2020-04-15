@@ -31,15 +31,12 @@ namespace ClubChallenge.Controllers
         }
 
         [HttpPost]
-        public ActionResult SignUp(Member events) 
+        public ActionResult SignUp(int id, string Pin) 
         {
-            if (!ModelState.IsValid) //validating events fields
-            {
-                return View("SignUpEvent");
-            }
-            _context.Members.Add(events); 
-            _context.SaveChanges(); //saving our changes
-            return RedirectToAction("ViewEvents", "User");
+            var mem = _context.Members.SingleOrDefault(c => c.PIN == Pin);
+            var events = _context.Events.SingleOrDefault(c => c.Id == id);
+
+            return View();
          
         }
     }

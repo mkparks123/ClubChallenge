@@ -12,8 +12,10 @@
 
     <h3>First Name: @Model.FirstName</h3>
     <h3>Last Name: @Model.LastName</h3>
-    <h3>Birthday: @Model.Birthdate</h3>
+    <h3>Birthday: @Model.Birthdate.Value.ToShortDateString()</h3>
     <h3> Members PIN: @Model.PIN</h3>
+    <h3>Events: 
+    </h3>
 
     <input type="submit" value="Edit" />
 }
