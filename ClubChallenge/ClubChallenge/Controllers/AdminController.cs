@@ -158,6 +158,11 @@ namespace ClubChallenge.Controllers
             return RedirectToAction("UserLogin", "Login");
         }
 
+        public ActionResult Volunteering()
+        {
+            return View();
+        }
+
 
     }
 }
