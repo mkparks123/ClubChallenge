@@ -12,7 +12,7 @@ namespace ClubChallenge.Controllers
     public class AdminController : Controller
     {
 
-        private DBEntities _context;
+        private DBEntities _context; 
 
         public AdminController()
         {
@@ -31,6 +31,7 @@ namespace ClubChallenge.Controllers
             
             return View(events);
         }
+
         public ActionResult Members()//members view
         {
             var members = _context.Members; //DBEntities.Members
@@ -42,10 +43,12 @@ namespace ClubChallenge.Controllers
         {
             return View();
         }
+
         public ActionResult AddEvent()//add event page
         {
             return View();
         }
+
         public ActionResult MemberDetails(int id)//member details page
         {
             var member = _context.Members.SingleOrDefault(c => c.Id == id);
@@ -148,11 +151,11 @@ namespace ClubChallenge.Controllers
         public ActionResult deleteMember(int id)//passing the Member ID 
         {
             var deletedMember = _context.Members.Where(c => c.Id == id).FirstOrDefault();//storing the member we wish to delete in a var
-
             _context.Members.Remove(deletedMember);
             _context.SaveChanges();
             return RedirectToAction("Members", "Admin");
         }
+
         public ActionResult Logout()
         {
             return RedirectToAction("UserLogin", "Login");

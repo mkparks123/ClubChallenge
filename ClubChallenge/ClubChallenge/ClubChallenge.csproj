@@ -288,6 +288,10 @@
     <Compile Include="Migrations\202004160026332_dbsetvolunteerevent.designer.cs">
       <DependentUpon>202004160026332_dbsetvolunteerevent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004161852377_labels.cs" />
+    <Compile Include="Migrations\202004161852377_labels.designer.cs">
+      <DependentUpon>202004161852377_labels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DBEntities.cs" />
@@ -478,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004160026332_dbsetvolunteerevent.resx">
       <DependentUpon>202004160026332_dbsetvolunteerevent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004161852377_labels.resx">
+      <DependentUpon>202004161852377_labels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
