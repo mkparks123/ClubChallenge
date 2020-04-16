@@ -1,0 +1,34 @@
+﻿@model ClubChallenge.Models.VolunteerEvents
+@{
+    ViewBag.Title = "AddVolunteerEvent";
+}
+
+<h2>AddVolunteerEvent</h2>
+
+@using (Html.BeginForm("SaveVolunteerEvent", "Admin"))
+{
+
+    <div class="formVolunteerEvent">
+        @Html.LabelFor(c =>c.Name)
+        @Html.TextBoxFor(c =>c.Name)<br />
+        @Html.ValidationMessageFor(m => m.Name)<br />
+
+        @Html.LabelFor(c => c.VEventDate)
+        @Html.TextBoxFor(c => c.VEventDate, "{0:MM/dd/yyyy}") (MM/DD/YYYY)<br />
+        @Html.ValidationMessageFor(m => m.VEventDate)<br />
+
+        @Html.LabelFor(c => c.VEventStartTime)
+        @Html.TextBoxFor(c => c.VEventStartTime, "{0:hh\\:mm}") <br />
+        @Html.ValidationMessageFor(m => m.VEventStartTime)<br />
+
+        @Html.LabelFor(c => c.VEventEndTime)
+        @Html.TextBoxFor(c => c.VEventEndTime, "{0:hh\\:mm}") <br />
+        @Html.ValidationMessageFor(m => m.VEventEndTime)<br />
+
+
+    </div>
+
+    <button type="submit">Save</button>
+
+}
+<input type="button" value="Go Back" onclick="location.href='@Url.Action("Volunteering", "Admin")'" />

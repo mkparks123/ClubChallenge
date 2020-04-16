@@ -350,6 +350,9 @@
     <Content Include="Views\Login\ClockOut.cshtml" />
     <Content Include="Views\Login\CreateAdminPage.cshtml" />
     <Content Include="Views\Admin\Volunteering.cshtml" />
+    <Content Include="Views\Admin\AddVolunteerEvent.cshtml" />
+    <Content Include="Views\Admin\VolunteerEventDetails.cshtml" />
+    <Content Include="Views\Admin\VolunteerEventEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Logout\" />

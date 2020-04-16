@@ -160,7 +160,61 @@ namespace ClubChallenge.Controllers
 
         public ActionResult Volunteering()
         {
+            var Vevents = _context.Volunteerevents;
+            return View(Vevents);
+        }
+
+        public ActionResult deleteVolunteerEvent(int id)
+        {
+            var deletedevent = _context.Volunteerevents.Where(c => c.Id == id).FirstOrDefault();
+            _context.Volunteerevents.Remove(deletedevent);
+            _context.SaveChanges();
+            return RedirectToAction("Volunteering", "Admin");
+        }
+
+        public ActionResult AddVolunteerEvent()
+        {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult SaveVolunteerEvent(VolunteerEvents Vevent)
+        {
+            if (!ModelState.IsValid) //validating fields
+            {
+                return View("AddVolunteerEvent");
+            }
+            if (Vevent.Id == 0) //if its a new event
+            {
+                _context.Volunteerevents.Add(Vevent);
+            }
+            else
+            {
+                var eventinDB = _context.Volunteerevents.Single(c => c.Id == Vevent.Id);
+                eventinDB.Name = Vevent.Name;
+                eventinDB.VEventDate = Vevent.VEventDate;
+                eventinDB.VEventStartTime = Vevent.VEventStartTime;
+                eventinDB.VEventEndTime = Vevent.VEventEndTime;
+
+
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("Volunteering", "Admin");
+        }
+
+        public ActionResult VolunteerEventDetails(int id)
+        {
+            var events = _context.Volunteerevents.SingleOrDefault(c => c.Id == id);
+
+            return View(events);
+        }
+
+        public ActionResult VolunteerEventEdit(int id)
+        {
+            var events = _context.Volunteerevents.SingleOrDefault(c => c.Id == id);
+
+            return View(events);
         }
 
 
