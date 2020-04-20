@@ -292,6 +292,10 @@
     <Compile Include="Migrations\202004161852377_labels.designer.cs">
       <DependentUpon>202004161852377_labels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004172247219_viewmodel1.cs" />
+    <Compile Include="Migrations\202004172247219_viewmodel1.designer.cs">
+      <DependentUpon>202004172247219_viewmodel1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DBEntities.cs" />
@@ -300,6 +304,7 @@
     <Compile Include="Models\MemberClubHours.cs" />
     <Compile Include="Models\VolunteerEvents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MemberEventViewModel.cs" />
     <Compile Include="ViewModels\MemberViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -357,6 +362,7 @@
     <Content Include="Views\Admin\AddVolunteerEvent.cshtml" />
     <Content Include="Views\Admin\VolunteerEventDetails.cshtml" />
     <Content Include="Views\Admin\VolunteerEventEdit.cshtml" />
+    <Content Include="Views\User\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Logout\" />
@@ -485,6 +491,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004161852377_labels.resx">
       <DependentUpon>202004161852377_labels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004172247219_viewmodel1.resx">
+      <DependentUpon>202004172247219_viewmodel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

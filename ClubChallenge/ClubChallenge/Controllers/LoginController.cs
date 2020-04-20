@@ -48,6 +48,7 @@ namespace ClubChallenge.Controllers
             if (submit.Equals("ClockIn"))
             {
                 var mem = _context.Members.Where(c => c.PIN == Pin).FirstOrDefault();
+
                 var hours = new MemberClubHours();
                 hours.ClockIn = DateTime.Now;
                 mem.Hours.Add(hours);

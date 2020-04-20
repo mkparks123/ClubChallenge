@@ -5,7 +5,7 @@
 }
 
 <h2>Edit Event</h2>
-@using (Html.BeginForm("SaveEvent", "Admin"))//calling same function we used to create a new event
+@using (Html.BeginForm("SaveEvent", "Admin"))
 {
     @Html.LabelFor(c => c.Name)
     @Html.TextBoxFor(c => c.Name)<br />
