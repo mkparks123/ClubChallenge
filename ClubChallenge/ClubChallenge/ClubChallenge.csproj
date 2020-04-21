@@ -366,7 +366,6 @@
     <Content Include="Views\Admin\AddVolunteerEvent.cshtml" />
     <Content Include="Views\Admin\VolunteerEventDetails.cshtml" />
     <Content Include="Views\Admin\VolunteerEventEdit.cshtml" />
-    <Content Include="Views\User\Test.cshtml" />
     <Content Include="Views\User\ViewVolunteerEvents.cshtml" />
     <Content Include="Views\User\SignUpVolunteerEvent.cshtml" />
   </ItemGroup>

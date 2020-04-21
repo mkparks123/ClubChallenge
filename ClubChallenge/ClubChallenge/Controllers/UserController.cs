@@ -52,13 +52,14 @@ namespace ClubChallenge.Controllers
             _context.SaveChanges();//save changes
 
 
-            return View("ViewEvents", "User");//return the member back to the events view
+            return RedirectToAction("ViewEvents", "User");//return the member back to the events view
          
         }
 
         public ActionResult ViewVolunteerEvents()
         {
-            return View();
+            var Vevents = _context.Volunteerevents;
+            return View(Vevents);
         }
 
         public ActionResult SignUpVolunteerEvent(int id)
@@ -73,7 +74,13 @@ namespace ClubChallenge.Controllers
          [HttpPost]
          public ActionResult VolunteerSignUp(VolunteerEventViewModel Vevent)
         {
-            return View("ViewVolunteerEvents", "User");
+            VolunteerEvents Volunteerevent = new VolunteerEvents();
+            Volunteerevent = _context.Volunteerevents.SingleOrDefault(c => c.Id == Vevent.Vevents.Id);
+            Member MemberinDB = _context.Members.SingleOrDefault(c => c.PIN == Vevent.member.PIN);
+            Volunteerevent.Members.Add(MemberinDB);
+            _context.Volunteerevents.Add(Volunteerevent);//add to table
+            _context.SaveChanges();
+            return RedirectToAction("ViewVolunteerEvents", "User");
         }
     }
     
