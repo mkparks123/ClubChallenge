@@ -41,16 +41,23 @@ namespace ClubChallenge.Controllers
         [HttpPost]
         public ActionResult SignUp(MemberEventViewModel Vmodel) //signup action
         {
+            Event events = new Event();
+            events = _context.Events.SingleOrDefault(c => c.Id == Vmodel.Events.Id);
+            Member MemberinDB = _context.Members.SingleOrDefault(c => c.PIN == Vmodel.Member.PIN);
+
+            events.Members.Add(MemberinDB);
             
 
-            var MemberinDB = _context.Members.Where(c => c.PIN == Vmodel.Member.PIN);
-           
-            var EventinDB = _context.Events.Where(c => c.Id == Vmodel.Events.Id);
-            _context.Members.Add(EventinDB);
+
+
+            
+            
+            
+            _context.Events.Add(events);
             _context.SaveChanges();
 
 
-            return View("Test", Vmodel);
+            return View("ViewEvents", "User");
          
         }
     }
