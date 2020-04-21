@@ -21,6 +21,7 @@ namespace ClubChallenge.Models
         [Display(Name = "Date of Birth")]
         public DateTime? Birthdate { get; set; }
         public virtual ICollection<Event> Events { get; set; }
+        public virtual ICollection<VolunteerEvents> Vevents { get; set; }
         public virtual ICollection<MemberClubHours> Hours { get; } = new HashSet<MemberClubHours>();
     }
 }

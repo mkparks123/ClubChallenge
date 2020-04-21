@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ClubChallenge.Models.VolunteerEvents>
+@{
+    Layout = null;
+}
+
+<h1>Volunteer Events For this Month!</h1>
+<table>
+
+
+    @foreach (var Vevents in Model)
+
+    {
+
+        <tr>
+            <td><h2>@Vevents.Name</h2></td>
+
+            <td>
+                @Html.ActionLink("Sign-Up", "SignUpVolunteerEvent", "User", new { id = Vevents.Id }, null)
+            </td>
+        </tr>
+
+
+    }
+
+</table>
+<input type="button" value="Cancel" onclick="location.href='@Url.Action("UserLogin", "Login")'" />
+

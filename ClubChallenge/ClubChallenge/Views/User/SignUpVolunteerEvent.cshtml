@@ -1,0 +1,20 @@
+﻿@model ClubChallenge.ViewModels.VolunteerEventViewModel
+@{
+    Layout = null;
+}
+
+<h2>SignUp for Volunteer Event</h2>
+
+@using (Html.BeginForm("VolunteerSignUp", "User", FormMethod.Post)) //calling createMember actionresult
+{
+    @Html.LabelFor(c => c.member.PIN)
+    @Html.TextBoxFor(c => c.member.PIN)
+
+    @Model.Vevents.Id
+
+    @Html.HiddenFor(c => c.Vevents.Id)
+
+
+
+    <button type="submit">Save</button>
+}

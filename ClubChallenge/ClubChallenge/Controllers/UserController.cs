@@ -41,24 +41,39 @@ namespace ClubChallenge.Controllers
         [HttpPost]
         public ActionResult SignUp(MemberEventViewModel Vmodel) //signup action
         {
-            Event events = new Event();
-            events = _context.Events.SingleOrDefault(c => c.Id == Vmodel.Events.Id);
-            Member MemberinDB = _context.Members.SingleOrDefault(c => c.PIN == Vmodel.Member.PIN);
+            Event events = new Event(); //create object of event class
+            events = _context.Events.SingleOrDefault(c => c.Id == Vmodel.Events.Id); //find event associated with ID
+            Member MemberinDB = _context.Members.SingleOrDefault(c => c.PIN == Vmodel.Member.PIN); //find member asociated with PIN
 
-            events.Members.Add(MemberinDB);
-            
-
-
-
+            events.Members.Add(MemberinDB);//add member to the event 
             
             
-            
-            _context.Events.Add(events);
-            _context.SaveChanges();
+            _context.Events.Add(events);//add to table
+            _context.SaveChanges();//save changes
 
 
-            return View("ViewEvents", "User");
+            return View("ViewEvents", "User");//return the member back to the events view
          
+        }
+
+        public ActionResult ViewVolunteerEvents()
+        {
+            return View();
+        }
+
+        public ActionResult SignUpVolunteerEvent(int id)
+        {
+            var Vevent = new VolunteerEventViewModel()
+            {
+                Vevents = _context.Volunteerevents.FirstOrDefault(e => e.Id == id),
+            };
+
+            return View(Vevent);
+        }
+         [HttpPost]
+         public ActionResult VolunteerSignUp(VolunteerEventViewModel Vevent)
+        {
+            return View("ViewVolunteerEvents", "User");
         }
     }
     

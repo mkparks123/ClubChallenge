@@ -42,12 +42,12 @@ namespace ClubChallenge.Controllers
         }
 
         [HttpPost]
-        public ActionResult ClubHours(string submit, string Pin)//member clocking in
+        public ActionResult ClubHours(string submit, Member member)//member clocking in
         {
 
             if (submit.Equals("ClockIn"))
             {
-                var mem = _context.Members.Where(c => c.PIN == Pin).FirstOrDefault();
+                var mem = _context.Members.SingleOrDefault(c => c.PIN == member.PIN);
 
                 var hours = new MemberClubHours();
                 hours.ClockIn = DateTime.Now;
@@ -57,7 +57,7 @@ namespace ClubChallenge.Controllers
             }
             else if (submit.Equals("ClockOut"))
             {
-                var mem = _context.Members.Where(c => c.PIN == Pin).FirstOrDefault();
+                var mem = _context.Members.SingleOrDefault(c => c.PIN == member.PIN);
                 var hours = new MemberClubHours();
                 hours.ClockOut = DateTime.Now;
                 mem.Hours.Add(hours);
