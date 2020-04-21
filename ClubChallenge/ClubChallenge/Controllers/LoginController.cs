@@ -44,7 +44,10 @@ namespace ClubChallenge.Controllers
         [HttpPost]
         public ActionResult ClubHours(string submit, Member member)//member clocking in
         {
-
+            if (!ModelState.IsValid)
+            {
+                return View("UserLogin");
+            }
             if (submit.Equals("ClockIn"))
             {
                 var mem = _context.Members.SingleOrDefault(c => c.PIN == member.PIN);

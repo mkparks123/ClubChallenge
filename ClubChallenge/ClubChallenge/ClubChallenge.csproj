@@ -300,6 +300,10 @@
     <Compile Include="Migrations\202004211856446_volunteerevents1.designer.cs">
       <DependentUpon>202004211856446_volunteerevents1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004211953388_validationclubhours.cs" />
+    <Compile Include="Migrations\202004211953388_validationclubhours.designer.cs">
+      <DependentUpon>202004211953388_validationclubhours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DBEntities.cs" />
@@ -502,6 +506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004211856446_volunteerevents1.resx">
       <DependentUpon>202004211856446_volunteerevents1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004211953388_validationclubhours.resx">
+      <DependentUpon>202004211953388_validationclubhours.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

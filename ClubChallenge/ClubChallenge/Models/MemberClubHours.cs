@@ -11,6 +11,7 @@ namespace ClubChallenge.Models
         public int Id { get; set; }
         public DateTime? ClockIn { get; set; }
         public DateTime? ClockOut { get; set; }
+        [Required]
         public Member Member { get; set; }
     }
 }
