@@ -83,7 +83,9 @@ namespace ClubChallenge.Controllers
 
         public ActionResult Reports()//reports page
         {
-            return View();
+            var Data = new MemberReports();
+            
+            return View(Data);
         }
 
         [HttpPost]

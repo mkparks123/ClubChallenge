@@ -313,6 +313,7 @@
     <Compile Include="Models\VolunteerEvents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\MemberEventViewModel.cs" />
+    <Compile Include="ViewModels\MemberReports.cs" />
     <Compile Include="ViewModels\VolunteerEventViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

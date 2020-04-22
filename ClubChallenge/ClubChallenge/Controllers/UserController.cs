@@ -78,6 +78,9 @@ namespace ClubChallenge.Controllers
             Volunteerevent = _context.Volunteerevents.SingleOrDefault(c => c.Id == Vevent.Vevents.Id);
             Member MemberinDB = _context.Members.SingleOrDefault(c => c.PIN == Vevent.member.PIN);
             Volunteerevent.Members.Add(MemberinDB);
+            var starttime = Convert.ToInt32(Volunteerevent.VEventStartTime.TotalHours);
+            var endtime = Convert.ToInt32(Volunteerevent.VEventEndTime.TotalHours);
+            Volunteerevent.VEventTotalTime = endtime - starttime;
            
             _context.SaveChanges();
             return RedirectToAction("ViewVolunteerEvents", "User");
