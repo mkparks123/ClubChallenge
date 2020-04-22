@@ -13,6 +13,16 @@
     <h3>Date of Event: @Model.EventDate.Value.ToShortDateString()</h3>
     <h3>Time Event Starts: @Model.EventStartTime</h3>
     <h3>Time event Ends: @Model.EventEndTime</h3>
+    <h3>Members Signed up:@foreach(var mem in Model.Members)
+    {
+        <ul>
+            <li>
+                @Html.DisplayFor(m => mem.FirstName)
+                @Html.DisplayFor(m=>mem.LastName)
+            </li>
+        </ul>
+    }
+    </h3>
     
     
 

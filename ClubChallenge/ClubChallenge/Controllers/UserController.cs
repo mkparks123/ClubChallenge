@@ -48,7 +48,7 @@ namespace ClubChallenge.Controllers
             events.Members.Add(MemberinDB);//add member to the event 
             
             
-            _context.Events.Add(events);//add to table
+            
             _context.SaveChanges();//save changes
 
 
@@ -78,7 +78,7 @@ namespace ClubChallenge.Controllers
             Volunteerevent = _context.Volunteerevents.SingleOrDefault(c => c.Id == Vevent.Vevents.Id);
             Member MemberinDB = _context.Members.SingleOrDefault(c => c.PIN == Vevent.member.PIN);
             Volunteerevent.Members.Add(MemberinDB);
-            _context.Volunteerevents.Add(Volunteerevent);//add to table
+           
             _context.SaveChanges();
             return RedirectToAction("ViewVolunteerEvents", "User");
         }

@@ -14,7 +14,26 @@
     <h3>Last Name: @Model.LastName</h3>
     <h3>Birthday: @Model.Birthdate.Value.ToShortDateString()</h3>
     <h3> Members PIN: @Model.PIN</h3>
-    <h3>Events:  </h3>
+    <h3>Events:  @foreach (var events in Model.Events)
+    {
+        <ul>
+            <li>
+                @Html.DisplayFor(m=> events.Name)
+                @Html.DisplayFor(m=> events.EventDate)
+            </li>
+        </ul>
+
+
+    }</h3>
+    <h3>Volunteer Events: @foreach (var vevents in Model.Vevents)
+    {
+        <ul>
+            <li>
+                @Html.DisplayFor(m=>vevents.Name)
+                @Html.DisplayFor(m=>vevents.VEventDate)
+            </li>
+        </ul>
+    }</h3>
 
     <input type="submit" value="Edit" />
 }
