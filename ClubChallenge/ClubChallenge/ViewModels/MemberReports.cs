@@ -8,9 +8,9 @@ namespace ClubChallenge.ViewModels
 {
     public class MemberReports
     {
-        public Member Members { get; set; }
-        public Event Events { get; set; }
-        public MemberClubHours Memberclubhours { get; set; }
-        public VolunteerEvents Volunteerevents { get; set; }
+        public List<Member> Members { get; set; }
+        public List<Event> Events { get; set; }
+        public List<MemberClubHours> Memberclubhours { get; set; }
+        public List<VolunteerEvents> Volunteerevents { get; set; }
     }
 }

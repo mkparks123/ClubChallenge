@@ -83,9 +83,17 @@ namespace ClubChallenge.Controllers
 
         public ActionResult Reports()//reports page
         {
-            var Data = new MemberReports();
-            
-            return View(Data);
+            var members = _context.Members.ToList();
+            Console.WriteLine(members.FirstOrDefault().Events.Count);
+            Console.WriteLine(members.FirstOrDefault().Events.FirstOrDefault().Name);
+
+            Console.WriteLine(members.FirstOrDefault().Vevents.Count);
+            Console.WriteLine(members.FirstOrDefault().Vevents.FirstOrDefault().Name);
+
+            Console.WriteLine(members.FirstOrDefault().Hours.Count);
+            Console.WriteLine(members.FirstOrDefault().Hours.ToString());
+
+            return View(members);
         }
 
         [HttpPost]
