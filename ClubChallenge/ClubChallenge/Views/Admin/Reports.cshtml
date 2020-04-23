@@ -7,48 +7,54 @@
 
 <table style="width: 100%">
     <tr>
-        <th>First Name</th>
+        <th>Name</th>
         <th>Events</th>
-        <th>Volunteer Events/hours</th>
-        
+        <th>Volunteer Events</th>
+        <th>Volunteering hours</th>
         <th>Clock-In</th>
         <th>Clock-Out</th>
     </tr>
 
     @foreach (var data in Model)
     {
-        <tr>
-            <td>
-                @data.FirstName
-            </td>
-            <td>
-               
-                @foreach (var events in data.Events)
-                {
-                    <text>@events.Name</text>
-                }
-                    </td>
-            <td>
-                @foreach(var vevent in data.Vevents)
-                {
-                    <text>@vevent.Name </text>
-                    <text>@vevent.VEventTotalTime</text>
-                }
-            </td>
+    <tr>
+        <td>
+            @data.FirstName
+            @data.LastName
+        </td>
+        <td>
 
+            @foreach (var events in data.Events)
+            {
+                <text>@events.Name</text>
+            }
+        </td>
+        @foreach (var vevent in data.Vevents)
+        {
             <td>
-                @foreach(var inhour in data.Hours)
-                {
-                    <text>@inhour.ClockIn.ToString() </text>
-                }
+
+                <text>@vevent.Name </text>
+
+
             </td>
             <td>
-                @foreach(var outhour in data.Hours)
-                {
-                    <text>@outhour.ClockOut.ToString()</text>
-                }
+                <text>@vevent.VEventTotalTime</text>
+
             </td>
-        </tr>
+        }
+        <td>
+            @foreach (var inhour in data.Hours)
+            {
+                <text>@inhour.ClockIn.ToString() </text>
+            }
+        </td>
+        <td>
+            @foreach (var outhour in data.Hours)
+            {
+                <text>@outhour.ClockOut.ToString()</text>
+            }
+        </td>
+    </tr>
             }
 </table>
 
