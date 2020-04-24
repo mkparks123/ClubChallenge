@@ -1,0 +1,11 @@
+﻿
+@{
+    Layout = null;
+}
+
+<h2>You Clocked Out!(Page will automatically redirect)</h2>
+
+<script>
+window.setTimeout(function(){
+window.location='@Url.Action("UserLogin","Login")';
+}, 4000);</script>

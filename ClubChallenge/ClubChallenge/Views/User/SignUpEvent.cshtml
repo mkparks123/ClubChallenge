@@ -1,5 +1,5 @@
 ﻿
-@model ClubChallenge.Models.MemberEventData
+@model ClubChallenge.ViewModels.MemberEventViewModel
 @{
     Layout = null;
 }
@@ -7,12 +7,14 @@
 
 <h2>Sign-Up</h2>
 
-@using (Html.BeginForm("SignUp", "User")) //calling createMember actionresult
+@using (Html.BeginForm("SignUp", "User", FormMethod.Post)) //calling createMember actionresult
 {
-    @Html.LabelFor(c => c.FirstName)
-    @Html.TextBoxFor(c => c.FirstName)<br />
-    @Html.LabelFor(c => c.LastName)
-    @Html.TextBoxFor(c => c.LastName)
+    @Html.LabelFor(c => c.Member.PIN)
+    @Html.TextBoxFor(c => c.Member.PIN)
+
+    @Html.HiddenFor(c => c.Events.Id)
+
+
 
     <button type="submit">Save</button>
 }

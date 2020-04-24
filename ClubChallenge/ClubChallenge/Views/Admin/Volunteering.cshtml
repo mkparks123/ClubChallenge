@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ClubChallenge.Models.VolunteerEvents>
+@{
+    ViewBag.Title = "Volunteering";
+}
+
+<h2>Volunteering</h2>
+
+<table>
+    @foreach (var Vevents in Model)
+    {
+        using (Html.BeginForm("deleteVolunteerEvent", "Admin", new { id = Vevents.Id }))
+
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => Vevents.Name)</td>
+
+                <td>
+                    @Html.ActionLink("Details", "VolunteerEventDetails", "Admin", new { id = Vevents.Id }, null)
+
+
+
+                    <input type="submit" value="Delete" />
+                </td>
+            </tr>
+        }
+
+    }
+
+</table>
+<input type="button"
+       value="Add Event"
+       onclick="location.href='@Url.Action("AddVolunteerEvent", "Admin")'" />

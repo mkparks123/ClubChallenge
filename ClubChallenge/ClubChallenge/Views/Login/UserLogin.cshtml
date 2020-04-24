@@ -1,15 +1,25 @@
-﻿
+﻿@model ClubChallenge.Models.Member
 @{
     Layout = null;
 }
 
 <h1>Club Members Login Below!</h1>
-<form>
 
-    Password: <br />
-    <input type="password" name="password"><br>
-    <input type="button" value="Clock-In" onclick="location.href='@Url.Action("ClockIn", "User")'" />
-    <input type="button" value="Clock-Out" onclick="location.href='@Url.Action("ClockOut", "User")'"/>
-    <input type="button" value="Events" onclick="location.href='@Url.Action("ViewEvents", "User")'"/>
-    <input type="button" value="Admin" onclick="location.href='@Url.Action("AdminLogin","Login")'"/>
-</form>
+@using (Html.BeginForm("ClubHours", "Login", FormMethod.Post))
+{
+
+    @Html.LabelFor(c => c.PIN)
+    @Html.TextBoxFor(c => c.PIN)<br />
+    @Html.ValidationMessageFor(c => c.PIN)<br />
+
+    <input type="submit" name="submit" value="ClockIn" />
+    <input type="submit" name="submit" value="ClockOut" />
+
+
+
+}
+
+
+<input type="button" value="Events" onclick="location.href='@Url.Action("ViewEvents", "User")'" />
+<input type="button" value="Admin" onclick="location.href='@Url.Action("AdminLogin","Login")'" />
+<input type="button" value="Volunteering" onclick="location.href='@Url.Action("ViewVolunteerEvents", "User")'"/>

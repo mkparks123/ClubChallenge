@@ -5,13 +5,15 @@ using System.Net.Mime;
 using System.Web;
 using System.Web.Mvc;
 using ClubChallenge.Models;
+using ClubChallenge.ViewModels;
 
 namespace ClubChallenge.Controllers
 {
+
     public class AdminController : Controller
     {
 
-        private DBEntities _context;
+        private DBEntities _context; 
 
         public AdminController()
         {
@@ -30,6 +32,7 @@ namespace ClubChallenge.Controllers
             
             return View(events);
         }
+
         public ActionResult Members()//members view
         {
             var members = _context.Members; //DBEntities.Members
@@ -41,10 +44,12 @@ namespace ClubChallenge.Controllers
         {
             return View();
         }
+
         public ActionResult AddEvent()//add event page
         {
             return View();
         }
+
         public ActionResult MemberDetails(int id)//member details page
         {
             var member = _context.Members.SingleOrDefault(c => c.Id == id);
@@ -55,6 +60,11 @@ namespace ClubChallenge.Controllers
         public ActionResult MemberEdit(int id)//member edit page
         {
             var member = _context.Members.SingleOrDefault(c => c.Id == id);
+            if (member == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(member);
         }
 
@@ -74,21 +84,59 @@ namespace ClubChallenge.Controllers
 
         public ActionResult Reports()//reports page
         {
-            return View();
+            var members = _context.Members.ToList();
+
+
+            return View(members);
         }
 
         [HttpPost]
-        public ActionResult createMember(Member member)//admin creating a member
+        public ActionResult SaveMember(Member member)//model binding
         {
-            _context.Members.Add(member); //adding member to our dbEntities
+            if (!ModelState.IsValid) //validating member fields
+            {
+                return View("MemberEdit");
+            }
+            if (member.Id == 0)//if its a new customer
+            {
+                _context.Members.Add(member); //adding member to our dbEntities
+            }
+            else
+            {
+                var memberinDB = _context.Members.Single(c => c.Id == member.Id);
+                memberinDB.FirstName = member.FirstName;
+                memberinDB.LastName = member.LastName;
+                memberinDB.Birthdate = member.Birthdate;
+                memberinDB.PIN = member.PIN;
+          
+            }
+            
             _context.SaveChanges(); //saving our changes
             return RedirectToAction("Members" ,"Admin");
         }
 
         [HttpPost]
-        public ActionResult createEvent(Event events)//admin creating an even
+        public ActionResult SaveEvent(Event events)//model binding
         {
-            _context.Events.Add(events);
+            if (!ModelState.IsValid) //validating events fields
+            {
+                return View("EventEdit");
+            }
+            if (events.Id == 0) //if its a new event
+            {
+                _context.Events.Add(events);
+            }
+            else
+            {
+                var eventinDB = _context.Events.Single(c => c.Id == events.Id);
+                eventinDB.Name = events.Name;
+                eventinDB.EventDate = events.EventDate;
+                eventinDB.EventStartTime = events.EventStartTime;
+                eventinDB.EventEndTime = events.EventEndTime;
+
+
+            }
+            
             _context.SaveChanges();
             return RedirectToAction("Events", "Admin");
 
@@ -107,10 +155,73 @@ namespace ClubChallenge.Controllers
         public ActionResult deleteMember(int id)//passing the Member ID 
         {
             var deletedMember = _context.Members.Where(c => c.Id == id).FirstOrDefault();//storing the member we wish to delete in a var
-
             _context.Members.Remove(deletedMember);
             _context.SaveChanges();
             return RedirectToAction("Members", "Admin");
+        }
+
+        public ActionResult Logout()
+        {
+            return RedirectToAction("UserLogin", "Login");
+        }
+
+        public ActionResult Volunteering()
+        {
+            var Vevents = _context.Volunteerevents;
+            return View(Vevents);
+        }
+
+        public ActionResult deleteVolunteerEvent(int id)
+        {
+            var deletedevent = _context.Volunteerevents.Where(c => c.Id == id).FirstOrDefault();
+            _context.Volunteerevents.Remove(deletedevent);
+            _context.SaveChanges();
+            return RedirectToAction("Volunteering", "Admin");
+        }
+
+        public ActionResult AddVolunteerEvent()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SaveVolunteerEvent(VolunteerEvents Vevent)
+        {
+            if (!ModelState.IsValid) //validating fields
+            {
+                return View("AddVolunteerEvent");
+            }
+            if (Vevent.Id == 0) //if its a new event
+            {
+                _context.Volunteerevents.Add(Vevent);
+            }
+            else
+            {
+                var eventinDB = _context.Volunteerevents.Single(c => c.Id == Vevent.Id);
+                eventinDB.Name = Vevent.Name;
+                eventinDB.VEventDate = Vevent.VEventDate;
+                eventinDB.VEventStartTime = Vevent.VEventStartTime;
+                eventinDB.VEventEndTime = Vevent.VEventEndTime;
+
+
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("Volunteering", "Admin");
+        }
+
+        public ActionResult VolunteerEventDetails(int id)
+        {
+            var events = _context.Volunteerevents.SingleOrDefault(c => c.Id == id);
+
+            return View(events);
+        }
+
+        public ActionResult VolunteerEventEdit(int id)
+        {
+            var events = _context.Volunteerevents.SingleOrDefault(c => c.Id == id);
+
+            return View(events);
         }
 
 

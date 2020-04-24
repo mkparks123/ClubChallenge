@@ -1,8 +1,24 @@
 ﻿
+@model ClubChallenge.Models.Event
 @{
     ViewBag.Title = "EventEdit";
 }
 
 <h2>Edit Event</h2>
+@using (Html.BeginForm("SaveEvent", "Admin"))
+{
+    @Html.LabelFor(c => c.Name)
+    @Html.TextBoxFor(c => c.Name)<br />
+    @Html.LabelFor(c => c.EventDate)
+    @Html.TextBoxFor(c => c.EventDate, "{0:MM/dd/yyyy}")<br />
+    @Html.LabelFor(c => c.EventStartTime)
+    @Html.TextBoxFor(c => c.EventStartTime)<br />
+    @Html.LabelFor(c => c.EventEndTime)
+    @Html.TextBoxFor(c => c.EventEndTime)<br />
 
-<input type="button" value="Cancel" onclick="location.href='@Url.Action("Events", "Admin")'"
+
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit">Save</button>
+}
+
+<input type="button" value="Go Back" onclick="location.href='@Url.Action("Events", "Admin")'"

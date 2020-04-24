@@ -9,8 +9,21 @@
 @using (Html.BeginForm("EventEdit", "Admin", new { id = Model.Id }))//passing member id to view
 {
 
-    <h2>First Name: @Model.Name</h2>
-    <h2>Last Name: @Model.EventDate</h2>
+    <h3>Name of Event: @Model.Name</h3>
+    <h3>Date of Event: @Model.EventDate.Value.ToShortDateString()</h3>
+    <h3>Time Event Starts: @Model.EventStartTime</h3>
+    <h3>Time event Ends: @Model.EventEndTime</h3>
+    <h3>Members Signed up:@foreach(var mem in Model.Members)
+    {
+        <ul>
+            <li>
+                @Html.DisplayFor(m => mem.FirstName)
+                @Html.DisplayFor(m=>mem.LastName)
+            </li>
+        </ul>
+    }
+    </h3>
+    
     
 
     <input type="submit" value="Edit" />

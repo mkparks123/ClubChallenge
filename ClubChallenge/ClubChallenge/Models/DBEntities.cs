@@ -15,7 +15,9 @@ namespace ClubChallenge.Models
         }
         public DbSet<Event> Events { get; set; } //we can access all our events in database using the Events property
         public DbSet<Member> Members { get; set; } //we can access all our members in database using the Members property
-        public DbSet<MemberEventData> Membereventdata { get; set; }//need to fix this model still
+        public DbSet<MemberClubHours> Memberclubhours { get; set; }
+        public DbSet<Admin> Admin { get; set; }
+        public DbSet<VolunteerEvents> Volunteerevents { get; set; }
 
     }
 }
