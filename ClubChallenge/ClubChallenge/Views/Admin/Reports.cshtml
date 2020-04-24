@@ -3,15 +3,46 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: left;
+        }
+    </style>
 </head>
+<h2>Monthly Reports</h2>
 <body>
-    <div>
-    
-    </div>
-</body>
-</html>
+
+    <table id="tblData" style="width:75%">
+        <tr>
+            <th>Volunteer Organization</th>
+            <th>Total Hours</th>
+            <th>Location</th>
+            <th>Contact</th>
+        </tr>
+        <tr>
+            <td>Example</td>
+            <td>X</td>
+            <td>Location</td>
+            <td>(XXX)XXX-XXXX</td>
+        </tr>
+        <tr>
+            <td>Example</td>
+            <td>X</td>
+            <td>Location</td>
+            <td>(XXX)XXX-XXXX</td>
+        </tr>
+    </table>
+
+
+
+    <button onclick="exportTableToExcel('tblData', 'members-data')">Export Table Data To Excel File</button>
+
+
+
