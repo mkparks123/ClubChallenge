@@ -1,10 +1,10 @@
 ﻿@model ClubChallenge.Models.Member
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
 
-<h1>Club Members Login Below!</h1>
-
+<h1 style="margin-top: 0px;">Club Members Login Below!</h1> @*add this to the style for better ipad title -> "text-align: center;"*@
+</br>
 @using (Html.BeginForm("ClubHours", "Login", FormMethod.Post))
 {
 
@@ -14,12 +14,10 @@
 
     <input type="submit" name="submit" value="ClockIn" />
     <input type="submit" name="submit" value="ClockOut" />
-
-
-
 }
+</br>
 
 
-<input type="button" value="Events" onclick="location.href='@Url.Action("ViewEvents", "User")'" />
-<input type="button" value="Admin" onclick="location.href='@Url.Action("AdminLogin","Login")'" />
-<input type="button" value="Volunteering" onclick="location.href='@Url.Action("ViewVolunteerEvents", "User")'"/>
+<input type="button" value="Events" onclick="location.href='@Url.Action("ViewEvents", "User")'" /> &nbsp;
+<input type="button" value="Admin" onclick="location.href='@Url.Action("AdminLogin","Login")'" /> &nbsp;
+<input type="button" value="Volunteering" onclick="location.href='@Url.Action("ViewVolunteerEvents", "User")'" />
