@@ -6,6 +6,9 @@ using System.Web;
 using System.Web.Mvc;
 using ClubChallenge.Models;
 using ClubChallenge.ViewModels;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
+using System.IO;
 
 namespace ClubChallenge.Controllers
 {
@@ -85,6 +88,8 @@ namespace ClubChallenge.Controllers
         public ActionResult Reports()//reports page
         {
             var members = _context.Members.ToList();
+
+
 
 
             return View(members);
@@ -224,6 +229,13 @@ namespace ClubChallenge.Controllers
             return View(events);
         }
 
+        public ActionResult ExportDataFromDatabase()
+        {
+            return View();
+        }
+
 
     }
+
+
 }

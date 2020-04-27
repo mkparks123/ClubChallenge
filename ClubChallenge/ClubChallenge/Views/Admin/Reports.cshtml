@@ -4,6 +4,7 @@
 
     ViewBag.Title = "Reports";
 }
+
 <style>
     table, th, td {
         border: 1px solid black;
@@ -15,57 +16,99 @@
     }
 </style>
 
-<table style="width: 100%">
-    <tr>
-        <th>Name</th>
-        <th>Events</th>
-        <th>Volunteer Events</th>
-        <th>Volunteering hours</th>
-        <th>Clock-In</th>
-        <th>Clock-Out</th>
-    </tr>
 
-    @foreach (var data in Model)
-    {
-    <tr>
-        <td>
-            @data.FirstName
-            @data.LastName
-        </td>
-        <td>
 
-            @foreach (var events in data.Events)
-            {
-                <text>@events.Name</text>
-            }
-        </td>
-        @foreach (var vevent in data.Vevents)
+<div class="container">
+    <table id="dtReports" style="width: 100%">
+        <tr>
+            <th>Name</th>
+            <th>Events</th>
+            <th>Volunteer Events</th>
+            <th>Volunteering hours</th>
+            <th>Clock-In</th>
+            <th>Clock-Out</th>
+        </tr>
+
+        @foreach (var data in Model)
         {
-            <td>
+            <tr>
+                <td>
+                    @data.FirstName
+                    @data.LastName
+                </td>
+                <td>
 
-                <text>@vevent.Name </text>
+                    @foreach (var events in data.Events)
+                    {
+                        <text>@events.Name</text>
+                    }
+                </td>
+                @foreach (var vevent in data.Vevents)
+                {
+                    <td>
+
+                        <text>@vevent.Name </text>
 
 
-            </td>
-            <td>
-                <text>@vevent.VEventTotalTime</text>
+                    </td>
+                    <td>
+                        <text>@vevent.VEventTotalTime</text>
 
-            </td>
+                    </td>
+                }
+                <td>
+                    @foreach (var inhour in data.Hours)
+                    {
+                        <text>@inhour.ClockIn.ToString() </text>
+                    }
+                </td>
+                <td>
+                    @foreach (var outhour in data.Hours)
+                    {
+                        <text>@outhour.ClockOut.ToString()</text>
+                    }
+                </td>
+            </tr>
         }
-        <td>
-            @foreach (var inhour in data.Hours)
-            {
-                <text>@inhour.ClockIn.ToString() </text>
+    </table>
+</div>
+<div>
+    <input class="btn btn-primary" value="Export" onclick="fnExcelReport();" />
+    <iframe id="txtArea1" style="display:none"></iframe>
+</div>
+@section scripts{
+    <script>
+        function fnExcelReport() {
+            var tab_text = "<table border='2px'><tr bgcolor='#87AFC6'>";
+            var textRange; var j = 0;
+            tab = document.getElementById('dtReports'); // id of table
+
+            for (j = 0; j < tab.rows.length; j++) {
+                tab_text = tab_text + tab.rows[j].innerHTML + "</tr>";
             }
-        </td>
-        <td>
-            @foreach (var outhour in data.Hours)
+
+            tab_text = tab_text + "</table>";
+            tab_text = tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+            tab_text = tab_text.replace(/<img[^>]*>/gi, ""); // remove if u want images in your table
+            tab_text = tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
             {
-                <text>@outhour.ClockOut.ToString()</text>
+                txtArea1.document.open("txt/html", "replace");
+                txtArea1.document.write(tab_text);
+                txtArea1.document.close();
+                txtArea1.focus();
+                sa = txtArea1.document.execCommand("SaveAs", true, "Say Thanks to Sumit.xls");
             }
-        </td>
-    </tr>
-    }
-</table>
+            else                 //other browser not tested on IE 11
+                sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
+
+            return (sa);
+        }
+    </script>
+}
 
 
