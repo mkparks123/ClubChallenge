@@ -34,6 +34,15 @@
             </li>
         </ul>
     }</h3>
+    <h3> Clock-in and Clock-out data: @foreach (var h in Model.Hours)
+    {
+        <ul>
+            <li>
+                @Html.DisplayFor(m=>h.ClockIn)
+                @Html.DisplayFor(m=>h.ClockOut)
+            </li>
+        </ul>
+    }</h3>
 
     <input type="submit" value="Edit" />
 }

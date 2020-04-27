@@ -7,6 +7,43 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 20px;
+    
+    z-index: 999;
+}
+
+.body-background {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 400px;
+    min-width: 100%;
+    background-image: url('Image/CCLogo.png');
+    background-position-y: 100px;
+    background-position-x: center;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    position: fixed;
+    z-index: -999;
+}
+
+.body-background-home {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    min-height: 70px;
+    min-width: 100%;
+    background-image: url('Image/CCLogo.png');
+    background-position-y: 0px;
+    background-position-x: center;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    opacity: 1;
+    position: relative;
+    z-index: 999;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 

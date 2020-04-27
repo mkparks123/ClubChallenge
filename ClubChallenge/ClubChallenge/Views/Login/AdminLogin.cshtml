@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
 <h1>Login Below</h1>
@@ -9,6 +9,6 @@
     Password: <br />
     <input type="password" name="password"><br>
     <input type="button" value="Login" onclick="location.href='@Url.Action("Index", "Admin")'" />
-    <input type="button" value="Cancel" onclick="location.href='@Url.Action("UserLogin", "Login")'"/>
-    <input type ="button" value="CreateAccount" onclick="location.href='@Url.Action("CreateAdminPage", "login")'"/>
+    @*<input type="button" value="Cancel" onclick="location.href='@Url.Action("UserLogin", "Login")'" />*@
+    <input type="button" value="CreateAccount" onclick="location.href='@Url.Action("CreateAdminPage", "login")'" />
 </form>
