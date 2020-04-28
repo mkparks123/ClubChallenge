@@ -49,27 +49,64 @@ namespace ClubChallenge.Controllers
             {
                 var mem = _context.Members.SingleOrDefault(c => c.PIN == member.PIN);
 
-                var hours = new MemberClubHours();
-                hours.ClockIn = DateTime.Now;
-                mem.Hours.Add(hours);
-                _context.SaveChanges();
-                return View("ClockIn");
+                if (mem == null) //validating events fields
+                {
+                    ModelState.AddModelError("PIN", "Invalid PIN");
+                    return View("UserLogin");
+                }
+                else
+                {
+
+                    var hours = new MemberClubHours();
+                    hours.ClockIn = DateTime.Now;
+                    mem.Hours.Add(hours);
+                    _context.SaveChanges();
+                    return View("ClockIn");
+                }
+
             }
             else if (submit.Equals("ClockOut"))
             {
                 var mem = _context.Members.SingleOrDefault(c => c.PIN == member.PIN);
-                var hours = new MemberClubHours();
-                hours.ClockOut = DateTime.Now;
-                mem.Hours.Add(hours);
-                _context.SaveChanges();
-                return View("ClockOut");
+                if (mem == null) //validating events fields
+                {
+                    ModelState.AddModelError("PIN", "Invalid PIN");
+                    return View("UserLogin");
+                }
+                else
+                {
+                    
+                    var hours = new MemberClubHours();
+                    hours.ClockOut = DateTime.Now;
+                    mem.Hours.Add(hours);
+                    _context.SaveChanges();
+                    return View("ClockOut");
+                }
+
             }
             else
             {
-                return View("AdminLogin","Login");
+                return View("UserLogin","Login");
             }
+        
 
+        }
 
+        [HttpPost]
+        public ActionResult ValidateAdmin(Admin admin)
+        {
+           
+            var ad = _context.Admin.SingleOrDefault(c => c.Password == admin.Password);
+            if(ad == null)
+            {
+                ModelState.AddModelError("Password", "Invalid Password");
+                return View("AdminLogin");
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Admin");
+            }
             
         }
     }

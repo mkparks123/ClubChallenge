@@ -8,6 +8,9 @@
 @using (Html.BeginForm("ClubHours", "Login", FormMethod.Post))
 {
 
+    @Html.HiddenFor(c => c.Id)
+    @Html.HiddenFor(c => c.FirstName)
+    @Html.HiddenFor(c => c.LastName)
     @Html.LabelFor(c => c.PIN)
     @Html.TextBoxFor(c => c.PIN)<br />
     @Html.ValidationMessageFor(c => c.PIN)<br />

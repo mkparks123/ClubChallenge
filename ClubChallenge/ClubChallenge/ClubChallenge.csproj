@@ -308,6 +308,10 @@
     <Compile Include="Migrations\202004211953388_validationclubhours.designer.cs">
       <DependentUpon>202004211953388_validationclubhours.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004280027354_adminlogin.cs" />
+    <Compile Include="Migrations\202004280027354_adminlogin.designer.cs">
+      <DependentUpon>202004280027354_adminlogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DBEntities.cs" />
@@ -518,6 +522,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004211953388_validationclubhours.resx">
       <DependentUpon>202004211953388_validationclubhours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004280027354_adminlogin.resx">
+      <DependentUpon>202004280027354_adminlogin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
