@@ -1,6 +1,15 @@
-﻿@{
+﻿@model ClubChallenge.Models.Event
+@{
     ViewBag.Title = "Home Page";
 }
-<h1>Welcome</h1>
+@{
+    DateTime date = DateTime.Now;
+    string dateWithFormat = date.ToString("dddd, MMMM d, yyyy");
+
+}
+<h1>Welcome! Today is @dateWithFormat</h1>
+
+<h2>Events for this month!</h2>
+<!--Have a for loop to display events and use date variable to only display events associated with this month-->
 
 

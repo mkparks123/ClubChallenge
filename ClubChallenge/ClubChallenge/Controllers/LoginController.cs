@@ -29,9 +29,28 @@ namespace ClubChallenge.Controllers
         [HttpPost]
         public ActionResult SaveAdmin(Admin admin)
         {
-             _context.Admin.Add(admin); //adding admin to our dbEntities
-             _context.SaveChanges(); //saving our changes
-            return RedirectToAction("AdminLogin", "Login");
+            if(admin.FirstName == null)
+            {
+                ModelState.AddModelError("FirstName", "Enter First Name");
+                return View("CreateAdminPage");
+            }
+            else if(admin.LastName == null)
+            {
+                ModelState.AddModelError("LastName", "Enter Last Name");
+                return View("CreateAdminPage");
+            }
+            else if(admin.Password == null)
+            {
+                ModelState.AddModelError("Passowrd", "Enter Password");
+                return View("CreateAdminPage");
+            }
+            else
+            {
+                _context.Admin.Add(admin); //adding admin to our dbEntities
+                _context.SaveChanges(); //saving our changes
+                return RedirectToAction("AdminLogin", "Login");
+            }
+            
 
 
         }

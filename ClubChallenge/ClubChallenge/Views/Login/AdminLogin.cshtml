@@ -2,22 +2,30 @@
 @{
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
+<style>
+    .form {
 
-<h1>Login Below</h1>
+    }
+</style>
+<div class="form">
+    <h1>Login Below</h1>
 
     @using (Html.BeginForm("ValidateAdmin", "Login", FormMethod.Post))
 
     {
         @Html.HiddenFor(c => c.FirstName)
         @Html.HiddenFor(c => c.FirstName)
-        @Html.LabelFor(c => c.Password)
+        @Html.LabelFor(c => c.Password)<br />
         @Html.PasswordFor(c => c.Password)<br />
         @Html.ValidationMessageFor(c => c.Password)<br />
 
 
         <input type="submit" name="submit" value="Login" />
     }
-
-
-    @*<input type="button" value="Cancel" onclick="location.href='@Url.Action("UserLogin", "Login")'" />*@
+    <br />
     <input type="button" value="CreateAccount" onclick="location.href='@Url.Action("CreateAdminPage", "login")'" />
+</div>
+
+
+
+    
