@@ -9,6 +9,7 @@ namespace ClubChallenge.ViewModels
 {
     public class MemberEventViewModel
     {
+        
         public Member Member { get; set; }
         public Event Events { get; set; }
 

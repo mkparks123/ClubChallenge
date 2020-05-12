@@ -11,6 +11,7 @@
 {
     @Html.LabelFor(c => c.Member.PIN)
     @Html.TextBoxFor(c => c.Member.PIN)
+    @Html.ValidationMessageFor(c => c.Member.PIN)
 
     @Html.HiddenFor(c => c.Events.Id)
 
