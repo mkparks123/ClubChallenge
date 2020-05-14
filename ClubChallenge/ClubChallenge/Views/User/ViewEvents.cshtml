@@ -1,22 +1,34 @@
 ﻿@model IEnumerable<ClubChallenge.Models.Event>
 @{
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    DateTime date = DateTime.Now;
+    string dateWithFormat = date.ToString("MMMM");
 }
+<style>
+    .signup {
+        border-style: solid;
+        position:absolute;
+        
+        
+    }
+</style>
 
-<h1>Events For this Month!</h1>
+<h1>Events For @dateWithFormat</h1>
 <table>
 
 
     @foreach (var events in Model)
 
     {
-
+        
         <tr>
             <td><h2>@events.Name</h2></td>
 
             <td>
-                
-                @Html.ActionLink("Sign-Up", "SignUpEvent", "User", new { id = events.Id }, null)
+                <div class="signup">
+                    @Html.ActionLink("Sign-Up", "SignUpEvent", "User", new { id = events.Id }, null)
+                </div>
+               
             </td>
         </tr>
         

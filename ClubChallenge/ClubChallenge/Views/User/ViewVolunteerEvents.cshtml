@@ -1,9 +1,19 @@
 ﻿@model IEnumerable<ClubChallenge.Models.VolunteerEvents>
 @{
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    DateTime date = DateTime.Now;
+    string dateWithFormat = date.ToString("MMMM");
 }
+<style>
+    .signup {
+        border-style: solid;
+        position: absolute;
 
-<h1>Volunteer Events For this Month!</h1>
+
+    }
+</style>
+
+<h1>Volunteer Events @dateWithFormat</h1>
 <table>
 
 
@@ -15,7 +25,10 @@
             <td><h2>@Vevents.Name</h2></td>
 
             <td>
-                @Html.ActionLink("Sign-Up", "SignUpVolunteerEvent", "User", new { id = Vevents.Id }, null)
+                <div class="signup">
+                    @Html.ActionLink("Sign-Up", "SignUpVolunteerEvent", "User", new { id = Vevents.Id }, null)
+                </div>
+
             </td>
         </tr>
 
