@@ -1,4 +1,4 @@
-﻿@model ClubChallenge.Models.Admin
+﻿@model ClubChallenge.ViewModels.RegisterAdmin
 @{
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
@@ -19,6 +19,10 @@
     @Html.LabelFor(c => c.Password)<br />
     @Html.TextBoxFor(c => c.Password)<br />
     @Html.ValidationMessageFor(c => c.Password)<br />
+
+    @Html.LabelFor(c => c.ConfirmPassword)<br />
+    @Html.TextBoxFor(c => c.ConfirmPassword)<br />
+    @Html.ValidationMessageFor(c => c.ConfirmPassword)
 
 
     <button type="submit">Save</button>

@@ -27,7 +27,7 @@ namespace ClubChallenge.Controllers
         }
 
         [HttpPost]
-        public ActionResult SaveAdmin(Admin admin)
+        public ActionResult SaveAdmin(Admin admin) //need to pass Register admin viewmodel here so we can confirm password
         {
             if(admin.FirstName == null)
             {
