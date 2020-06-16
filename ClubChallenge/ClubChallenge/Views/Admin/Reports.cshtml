@@ -40,32 +40,37 @@
 
                     @foreach (var events in data.Events)
                     {
-                        <text>@events.Name</text>
+
+                      <text>@events.Name</text>
+                        
                     }
                 </td>
-                @foreach (var vevent in data.Vevents)
-                {
-                    <td>
+                <td>
+                    @foreach (var vevent in data.Vevents)
+                    {
+                    
 
-                        <text>@vevent.Name </text>
-
-
-                    </td>
-                    <td>
-                        <text>@vevent.VEventTotalTime</text>
-
-                    </td>
-                }
+                            <text>@vevent.Name </text>
+                   
+                    
+                    }
+                </td>
+                <td>
+                    @foreach (var eventtime in data.Vevents)
+                    {
+                        <text>@eventtime.VEventTotalTime</text>
+                    }
+                </td>
                 <td>
                     @foreach (var inhour in data.Hours)
                     {
-                        <text>@inhour.ClockIn.ToString() </text>
+                        <text>@inhour.ClockIn.ToString() <br /></text>
                     }
                 </td>
                 <td>
                     @foreach (var outhour in data.Hours)
                     {
-                        <text>@outhour.ClockOut.ToString()</text>
+                        <text>@outhour.ClockOut.ToString()<br /></text>
                     }
                 </td>
             </tr>
