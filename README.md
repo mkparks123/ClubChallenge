@@ -1,3 +1,2 @@
 # ClubChallenge
-# hosted on clubreportdashboard.azurewebsites.net
-# admin has to enter a password to login, you can use simply 123456 to login
+# some bugs still need to be fixed in terms of styling and format. Login validation needs to be implemented as well
